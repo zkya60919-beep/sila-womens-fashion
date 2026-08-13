@@ -366,8 +366,6 @@ html[dir="rtl"] .mm-link::after { content: "←"; }
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 .social-pill:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-.social-pill.wa-pill { background: rgb(37, 211, 102, 0.12); color: #25D366; border-color: rgb(37, 211, 102, 0.4); }
-.social-pill.wa-pill:hover { background: #25D366; color: #fff; border-color: #25D366; }
 
 /* ============================================================
    HERO
@@ -832,13 +830,8 @@ html[dir="rtl"] .why-card::before { transform-origin: right; }
   flex-basis: 100%; width: 100%; text-align: center;
   margin-block-start: 6px; font-size: 0.82rem; color: #93848A;
 }
-.footer-phone a {
-  font-weight: 700; letter-spacing: 0.02em;
-  color: #25D366; text-decoration: none;
-  border-block-end: 1px solid transparent;
-  transition: border-color 0.3s, color 0.3s;
-}
-.footer-phone a:hover { color: #32E075; border-color: currentColor; }
+.footer-phone bdi { font-weight: 700; letter-spacing: 0.02em; color: var(--pink); }
+[data-theme="dark"] .footer-phone bdi { color: #FF9Ab0; }
 [data-theme="dark"] .footer-phone { color: #8E8E98; }
 
 /* ============================================================
@@ -858,13 +851,11 @@ html[dir="rtl"] .why-card::before { transform-origin: right; }
 }
 .fs-link:nth-child(2) { animation-delay: 0.12s; }
 .fs-link:nth-child(3) { animation-delay: 0.24s; }
-.fs-link:nth-child(4) { animation-delay: 0.36s; }
 @keyframes fsIn { from { opacity: 0; transform: translateY(18px) scale(0.7); } to { opacity: 1; transform: none; } }
 .fs-link:hover { transform: translateY(-4px); color: #fff; }
 .fs-ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-color: transparent; }
 .fs-fb:hover { background: #1877F2; border-color: transparent; }
 .fs-tk:hover { background: #111; border-color: #69C9D0; color: #69C9D0; }
-.fs-wa:hover { background: #25D366; border-color: transparent; }
 
 .to-top {
   position: fixed; inset-block-end: 24px; inset-inline-end: 20px; z-index: 800;
