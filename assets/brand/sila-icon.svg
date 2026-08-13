@@ -1,0 +1,13 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SILA">
+  <defs>
+    <linearGradient id="silaGold" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8B4C4"/>
+      <stop offset="1" stop-color="#B96880"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" stroke="url(#silaGold)" stroke-width="1.4"/>
+  <circle cx="60" cy="60" r="48" stroke="url(#silaGold)" stroke-width="0.8" opacity="0.45"/>
+  <text x="60" y="60" text-anchor="middle" dominant-baseline="central"
+        font-family="Playfair Display, Georgia, serif" font-size="58" font-weight="600"
+        fill="url(#silaGold)" letter-spacing="-2">S</text>
+</svg>
