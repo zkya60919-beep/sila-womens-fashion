@@ -816,6 +816,16 @@ html[dir="rtl"] .why-card::before { transform-origin: right; }
 }
 .footer-bottom p { font-size: 0.86rem; color: #93848A; }
 .footer-made { color: var(--pink) !important; }
+.footer-credit {
+  flex-basis: 100%; width: 100%; text-align: center;
+  margin-block-start: 12px; padding-block-start: 14px;
+  border-block-start: 1px dashed rgba(255, 255, 255, 0.09);
+  font-size: 0.8rem; letter-spacing: 0.01em;
+}
+.footer-credit strong { color: #fff; font-weight: 600; }
+.footer-credit .dev-name { color: var(--pink); }
+[data-theme="dark"] .footer-credit { color: #8E8E98; }
+[data-theme="dark"] .footer-credit strong { color: #EDEDED; }
 
 /* ============================================================
    FLOATING SOCIAL + TO TOP

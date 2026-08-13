@@ -140,6 +140,7 @@
 
       "footer.desc": "لأن أناقتكِ تستحق أن تكون مختلفة.",
       "footer.linksTitle": "روابط سريعة", "footer.contactTitle": "تواصلي معنا",
+      "footer.devBy": "من تطوير", "footer.devOf": "· التابع لشركة Technikos",
       "footer.instagram": "راسلينا على انستجرام", "footer.facebook": "صفحة الفيسبوك", "footer.tiktok": "تيك توك",
       "footer.hours": "متاحون يوميًا · 10 صباحًا – 11 مساءً",
       "footer.rights": "© 2026 SILA. جميع الحقوق محفوظة.",
@@ -203,6 +204,7 @@
 
       "footer.desc": "Because your style deserves to be different.",
       "footer.linksTitle": "Quick Links", "footer.contactTitle": "Get In Touch",
+      "footer.devBy": "Developed by", "footer.devOf": "· affiliated with Technikos",
       "footer.instagram": "Message us on Instagram", "footer.facebook": "Facebook Page", "footer.tiktok": "TikTok",
       "footer.hours": "Available daily · 10 AM – 11 PM",
       "footer.rights": "© 2026 SILA. All Rights Reserved.",
