@@ -808,6 +808,10 @@ html[dir="rtl"] .why-card::before { transform-origin: right; }
 .footer-col a::before { content: "—"; color: var(--pink); opacity: 0; transition: opacity 0.3s; }
 .footer-col a:hover { color: var(--pink); }
 .footer-col a:hover::before { opacity: 1; }
+.footer-tel .tel-num { font-weight: 700; letter-spacing: 0.03em; color: var(--pink); direction: ltr; unicode-bidi: isolate; }
+.footer-tel:hover .tel-num { color: #fff; }
+[data-theme="dark"] .footer-tel .tel-num { color: #FF9Ab0; }
+[data-theme="dark"] .footer-tel:hover .tel-num { color: #fff; }
 .footer-note { font-size: 0.82rem; color: #93848A; margin-block-start: 6px; }
 .footer-bottom { border-block-start: 1px solid rgba(255, 255, 255, 0.1); }
 .footer-bottom .container {
