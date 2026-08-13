@@ -98,18 +98,11 @@
 
       <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
         <a href="#home" class="nav-link active" data-i18n="nav.home">Home</a>
-        <a href="#categories" class="nav-link" data-i18n="nav.collections">Collections</a>
-        <a href="#new-collection" class="nav-link" data-i18n="nav.newCollection">New Collection</a>
-        <a href="#best-sellers" class="nav-link" data-i18n="nav.bestSellers">Best Sellers</a>
         <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
         <a href="#reviews" class="nav-link" data-i18n="nav.reviews">Reviews</a>
       </nav>
 
       <div class="nav-tools">
-        <button class="icon-btn" id="searchBtn" data-i18n-aria="common.search" aria-label="Search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-        </button>
-
         <button class="icon-btn lang-btn" id="langBtn" aria-label="Switch language">
           <span id="langBtnText">AR</span>
         </button>
@@ -141,9 +134,6 @@
     </div>
     <nav class="mm-links" aria-label="Mobile navigation">
       <a href="#home" class="mm-link" data-i18n="nav.home">Home</a>
-      <a href="#categories" class="mm-link" data-i18n="nav.collections">Collections</a>
-      <a href="#new-collection" class="mm-link" data-i18n="nav.newCollection">New Collection</a>
-      <a href="#best-sellers" class="mm-link" data-i18n="nav.bestSellers">Best Sellers</a>
       <a href="#about" class="mm-link" data-i18n="nav.about">About</a>
       <a href="#reviews" class="mm-link" data-i18n="nav.reviews">Reviews</a>
     </nav>
@@ -171,8 +161,8 @@
           <h1 class="hero-title" data-reveal id="heroTitle" data-i18n-raw="hero.title"></h1>
           <p class="hero-desc" data-reveal data-i18n="hero.desc">Discover pieces designed to reflect your unique style.</p>
           <div class="hero-actions" data-reveal>
-            <a href="#new-collection" class="btn btn-primary">
-              <span data-i18n="hero.explore">Explore Collection</span>
+            <a href="#about" class="btn btn-primary">
+              <span data-i18n="hero.explore">Discover SILA</span>
               <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
             <a href="#contact" class="btn btn-ghost">
@@ -195,7 +185,7 @@
 
           <div class="float-chip new-chip" aria-hidden="true">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9l-3 5h9l-4 7c0 0 8-3 7-12z"/></svg>
-            <span data-i18n="hero.chipNew">New Collection</span>
+            <span data-i18n="hero.chipNew">New Season 2026</span>
           </div>
 
           <div class="float-card rating-card" aria-hidden="true">
@@ -210,7 +200,7 @@
         </div>
       </div>
 
-      <a class="scroll-indicator" href="#categories" data-i18n-aria="hero.scroll" aria-label="Scroll to discover">
+      <a class="scroll-indicator" href="#about" data-i18n-aria="hero.scroll" aria-label="Scroll to discover">
         <span class="mouse"><span class="wheel"></span></span>
       </a>
     </section>
@@ -244,60 +234,6 @@
       </div>
     </div>
 
-    <!-- ============ CATEGORIES ============ -->
-    <section class="section categories" id="categories">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="kicker" data-i18n="cat.kicker">Collections</span>
-          <h2 class="section-title" data-i18n="cat.title">Shop by Category</h2>
-          <p class="section-sub" data-i18n="cat.sub">Everything you need for a complete, elegant look.</p>
-        </div>
-
-        <div class="cat-grid" id="categoriesGrid">
-          <!-- Filled from script.js image config -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ NEW COLLECTION ============ -->
-    <section class="section new-collection" id="new-collection">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="kicker" data-i18n="coll.kicker">Latest Drop</span>
-          <h2 class="section-title" data-i18n="coll.title">New Collection</h2>
-          <p class="section-sub" data-i18n="coll.sub">Fresh pieces for a different look every time.</p>
-        </div>
-
-        <div class="product-grid" id="productGrid"><!-- Filled from script.js product data --></div>
-      </div>
-    </section>
-
-    <!-- ============ BEST SELLERS ============ -->
-    <section class="section best-sellers" id="best-sellers">
-      <div class="container">
-        <div class="section-head split" data-reveal>
-          <div>
-            <span class="kicker" data-i18n="best.kicker">Loved By Many</span>
-            <h2 class="section-title" data-i18n="best.title">Best Sellers</h2>
-            <p class="section-sub" data-i18n="best.sub">Our customers' most loved pieces.</p>
-          </div>
-          <div class="carousel-nav" aria-hidden="true">
-            <button class="cnav-btn prev" id="bestPrev" aria-label="Previous">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </button>
-            <button class="cnav-btn next" id="bestNext" aria-label="Next">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="swiper best-swiper" data-reveal>
-          <div class="swiper-wrapper" id="bestSellersGrid"><!-- Filled from script.js --></div>
-          <div class="swiper-pagination" aria-hidden="true"></div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ EDITORIAL ============ -->
     <section class="section editorial" id="editorial">
       <div class="container editorial-inner">
@@ -314,8 +250,8 @@
             <em data-i18n="edit.line2">It's how you feel when you wear it.</em>
           </h2>
           <p class="editorial-desc" data-i18n="edit.desc">Every SILA piece is a quiet statement — designed to move with you, and feel as beautiful as it looks.</p>
-          <a href="#new-collection" class="btn btn-dark-light">
-            <span data-i18n="common.explore">Explore Collection</span>
+          <a href="#contact" class="btn btn-dark-light">
+            <span data-i18n="cta.contact">Contact SILA</span>
             <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
@@ -497,20 +433,9 @@
       <nav class="footer-col" aria-label="Footer links">
         <h4 data-i18n="footer.linksTitle">Quick Links</h4>
         <a href="#home" data-i18n="nav.home">Home</a>
-        <a href="#categories" data-i18n="nav.collections">Collections</a>
-        <a href="#new-collection" data-i18n="nav.newCollection">New Collection</a>
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
-      </nav>
-
-      <nav class="footer-col" aria-label="Collections links">
-        <h4 data-i18n="footer.collectionsTitle">Collections</h4>
-        <a href="#categories" data-i18n="cat.dresses">Dresses</a>
-        <a href="#categories" data-i18n="cat.hijab">Hijab</a>
-        <a href="#categories" data-i18n="cat.scarves">Scarves</a>
-        <a href="#categories" data-i18n="cat.sets">Sets</a>
-        <a href="#new-collection" data-i18n="cat.newCollection">New Collection</a>
       </nav>
 
       <div class="footer-col">
@@ -551,46 +476,6 @@
   <button class="to-top" id="toTop" aria-label="Back to top">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
   </button>
-
-  <!-- ============ SEARCH OVERLAY ============ -->
-  <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search products" hidden>
-    <div class="search-box">
-      <form class="search-form" id="searchForm" role="search">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-        <input type="search" id="searchInput" data-i18n-ph="search.placeholder" placeholder="Search for your favorite piece…" autocomplete="off" />
-        <button type="button" class="icon-btn search-close" id="searchClose" data-i18n-aria="common.close" aria-label="Close search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        </button>
-      </form>
-      <div class="search-results" id="searchResults"><!-- Filled from script.js --></div>
-      <p class="search-empty" id="searchEmpty" hidden data-i18n="search.empty">We couldn't find what you're looking for.</p>
-    </div>
-  </div>
-
-  <!-- ============ QUICK VIEW MODAL ============ -->
-  <div class="modal" id="quickView" role="dialog" aria-modal="true" aria-label="Product quick view" hidden>
-    <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-card">
-      <button class="icon-btn modal-close" data-close-modal data-i18n-aria="common.close" aria-label="Close">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-      <div class="modal-media"><img id="qvImage" src="" alt="" /></div>
-      <div class="modal-body">
-        <span class="product-cat" id="qvCategory"></span>
-        <h3 class="modal-title" id="qvName"></h3>
-        <div class="product-rate" id="qvRating"></div>
-        <p class="modal-price" id="qvPrice"></p>
-        <p class="modal-desc" id="qvDesc"></p>
-        <button class="btn btn-primary modal-fav" id="qvFav">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-          <span data-i18n="common.favorite">Add to Favorites</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ TOAST ============ -->
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <!-- Swiper + scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

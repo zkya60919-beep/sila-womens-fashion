@@ -1,6 +1,6 @@
 /* ============================================================
    SILA — Premium Women's Fashion
-   Vanilla JS: i18n · Theme · Products · Carousels · UI
+   Vanilla JS: i18n · Theme · Reviews · UI
    ============================================================ */
 (function () {
   "use strict";
@@ -14,23 +14,6 @@
     editorial: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1100&q=80",
     about: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1100&q=80",
     cta: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80",
-
-    dresses: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80",
-    shirts: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=900&q=80",
-    sets: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=80",
-    scarves: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=80",
-    hijab: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=80",
-    pants: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80",
-    newCollection: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
-
-    product1: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80",
-    product2: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80",
-    product3: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80",
-    product4: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80",
-    product5: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
-    product6: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80",
-    product7: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80",
-    product8: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&q=80",
 
     gallery1: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80",
     gallery2: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=700&q=80",
@@ -52,140 +35,7 @@
   };
 
   /* ------------------------------------------------------------
-     3. PRODUCT DATA — edit here, everywhere updates automatically
-     ------------------------------------------------------------ */
-  const products = [
-    {
-      id: 1,
-      nameAr: "فستان SILA المميز",
-      nameEn: "SILA Signature Dress",
-      categoryAr: "فساتين", categoryEn: "Dresses",
-      price: "699 EGP", oldPrice: "949 EGP",
-      rating: 4.9, reviews: 86,
-      badgeAr: "جديد", badgeEn: "New",
-      featured: true, bestSeller: true,
-      descAr: "فستان بقصّة ملكية وخامة قطنية فاخرة، صُمم ليمنحكِ حضورًا أنيقًا في كل مناسبة.",
-      descEn: "A royal-cut dress in premium cotton, designed to give you an elegant presence at any occasion.",
-      image: images.product1
-    },
-    {
-      id: 2,
-      nameAr: "طقم روز الأنيق",
-      nameEn: "Rose Elegant Set",
-      categoryAr: "أطقم", categoryEn: "Sets",
-      price: "949 EGP", oldPrice: "1199 EGP",
-      rating: 4.8, reviews: 64,
-      badgeAr: "جديد", badgeEn: "New",
-      featured: true, bestSeller: true,
-      descAr: "طقم أنثوي باللون الوردي الهادئ، يجمع بين الراحة والرقي في إطلالة واحدة متكاملة.",
-      descEn: "A feminine set in soft rose tones, blending comfort and sophistication in one complete look.",
-      image: images.product2
-    },
-    {
-      id: 3,
-      nameAr: "شال حرير ناعم",
-      nameEn: "Soft Silk Scarf",
-      categoryAr: "شالات", categoryEn: "Scarves",
-      price: "249 EGP", oldPrice: "349 EGP",
-      rating: 4.9, reviews: 121,
-      badgeAr: "جديد", badgeEn: "New",
-      featured: true, bestSeller: true,
-      descAr: "شال من الحرير الناعم اللمسة، يضيف لمسة من الأناقة إلى أي إطلالة صباحية أو مسائية.",
-      descEn: "A feather-light silk scarf that adds a graceful touch to any morning or evening look.",
-      image: images.product3
-    },
-    {
-      id: 4,
-      nameAr: "قميص كلاسيكي",
-      nameEn: "Silk Classic Shirt",
-      categoryAr: "قمصان", categoryEn: "Shirts",
-      price: "459 EGP", oldPrice: null,
-      rating: 4.7, reviews: 48,
-      badgeAr: "الأكثر مبيعًا", badgeEn: "Best Seller",
-      featured: true, bestSeller: true,
-      descAr: "قميص بقصّة عصرية مناسب للعمل والمناسبات اليومية، يمنحكِ حضورًا راقيًا وثقة دائمة.",
-      descEn: "A contemporary-cut shirt for work and everyday occasions, giving you a refined, confident presence.",
-      image: images.product4
-    },
-    {
-      id: 5,
-      nameAr: "عباية عصرية",
-      nameEn: "Modern Abaya",
-      categoryAr: "حجاب", categoryEn: "Hijab",
-      price: "1299 EGP", oldPrice: "1599 EGP",
-      rating: 5.0, reviews: 39,
-      badgeAr: "جديد", badgeEn: "New",
-      featured: true, bestSeller: true,
-      descAr: "عباءة بتصميم عصري يمزج الاحتشام بالأناقة، بتفاصيل تجعل إطلالتك مميزة دائمًا.",
-      descEn: "A contemporary abaya blending modesty with elegance, with details that make your look stand out.",
-      image: images.product5
-    },
-    {
-      id: 6,
-      nameAr: "إطلالة يومية",
-      nameEn: "Everyday Look Set",
-      categoryAr: "بناطيل", categoryEn: "Pants",
-      price: "799 EGP", oldPrice: null,
-      rating: 4.8, reviews: 73,
-      badgeAr: "الأكثر مبيعًا", badgeEn: "Best Seller",
-      featured: true, bestSeller: true,
-      descAr: "طقم يومي مريح وأنيق باللحظة نفسها، خامة مرنة تتحرك معكِ طوال اليوم.",
-      descEn: "A comfortable, chic everyday set in a stretch fabric that moves with you all day long.",
-      image: images.product6
-    },
-    {
-      id: 7,
-      nameAr: "فستان اللؤلؤ المسائي",
-      nameEn: "Pearl Evening Dress",
-      categoryAr: "فساتين", categoryEn: "Dresses",
-      price: "1199 EGP", oldPrice: "1449 EGP",
-      rating: 4.9, reviews: 55,
-      badgeAr: "الأكثر مبيعًا", badgeEn: "Best Seller",
-      featured: false, bestSeller: true,
-      descAr: "فستان مسائي بتفاصيل راقية تستحقينها في ليلتك المميزة.",
-      descEn: "An evening dress with refined details, made for your most special nights.",
-      image: images.product7
-    },
-    {
-      id: 8,
-      nameAr: "طقم بطبقات عصرية",
-      nameEn: "Minimal Layered Set",
-      categoryAr: "أطقم", categoryEn: "Sets",
-      price: "1099 EGP", oldPrice: "1299 EGP",
-      rating: 4.8, reviews: 61,
-      badgeAr: "الأكثر مبيعًا", badgeEn: "Best Seller",
-      featured: false, bestSeller: true,
-      descAr: "طقم مينيمال بطبقات مبتكرة لإطلالة عصرية بلا مجهود.",
-      descEn: "A minimal set with clever layering for an effortlessly modern look.",
-      image: images.product8
-    }
-  ];
-
-  /* ------------------------------------------------------------
-     4. CATEGORIES DATA
-     ------------------------------------------------------------ */
-  const categories = [
-    { key: "dresses", badgeAr: "الأكثر طلبًا", badgeEn: "Most Loved", image: images.dresses, span: "cat-dresses" },
-    { key: "shirts", badgeAr: "كلاسيك", badgeEn: "Classic", image: images.shirts, span: "cat-shirts" },
-    { key: "sets", badgeAr: "إطلالة كاملة", badgeEn: "Complete Look", image: images.sets, span: "cat-sets" },
-    { key: "scarves", badgeAr: "لمسة ناعمة", badgeEn: "Soft Touch", image: images.scarves, span: "cat-scarves" },
-    { key: "hijab", badgeAr: "أناقة محتشمة", badgeEn: "Modest Elegance", image: images.hijab, span: "cat-hijab" },
-    { key: "pants", badgeAr: "يومي", badgeEn: "Everyday", image: images.pants, span: "cat-pants" },
-    { key: "newcollection", badgeAr: "2026", badgeEn: "2026", image: images.newCollection, span: "cat-newcollection cat-pink-overlay" }
-  ];
-
-  const categoryNames = {
-    dresses: { ar: "فساتين", en: "Dresses" },
-    shirts: { ar: "قمصان", en: "Shirts" },
-    sets: { ar: "أطقم", en: "Sets" },
-    scarves: { ar: "شالات", en: "Scarves" },
-    hijab: { ar: "حجاب", en: "Hijab" },
-    pants: { ar: "بناطيل", en: "Pants" },
-    newcollection: { ar: "المجموعة الجديدة", en: "New Collection" }
-  };
-
-  /* ------------------------------------------------------------
-     5. REVIEWS DATA
+     3. REVIEWS DATA
      ------------------------------------------------------------ */
   const reviews = [
     {
@@ -221,7 +71,7 @@
   ];
 
   /* ------------------------------------------------------------
-     6. GALLERY DATA
+     4. GALLERY DATA
      ------------------------------------------------------------ */
   const galleryItems = [
     { img: images.gallery1 },
@@ -235,35 +85,25 @@
   ];
 
   /* ------------------------------------------------------------
-     7. TRANSLATIONS
+     5. TRANSLATIONS
      ------------------------------------------------------------ */
   const translations = {
     ar: {
       "meta.title": "SILA | أزياء نسائية عصرية وأنيقة",
       "meta.desc": "اكتشفي عالم SILA للأزياء النسائية، تصميمات أنيقة وعصرية تناسب ذوقكِ وتمنحكِ إطلالة مميزة.",
 
-      "common.search": "ابحثي", "common.theme": "تبديل المظهر", "common.close": "إغلاق",
-      "common.explore": "اكتشفي المجموعة", "common.favorite": "أضيفي إلى المفضلة", "common.instagram": "انستجرام",
-      "common.favAdded": "تمت الإضافة إلى المفضلة ❤",
-      "common.favRemoved": "تمت الإزالة من المفضلة",
+      "common.theme": "تبديل المظهر", "common.close": "إغلاق", "common.instagram": "انستجرام",
 
-      "product.quickView": "عرض سريع",
-      "product.favAria": "أضيفي إلى المفضلة",
-      "product.favAriaActive": "في المفضلة",
-      "search.placeholder": "ابحثي عن قطعتك المفضلة...",
-      "search.empty": "لم نجد ما تبحثين عنه.",
-
-      "nav.home": "الرئيسية", "nav.collections": "المجموعات", "nav.newCollection": "أحدث مجموعة",
-      "nav.bestSellers": "الأكثر مبيعًا", "nav.about": "عن SILA", "nav.reviews": "آراء العميلات", "nav.contact": "تواصلي معنا",
+      "nav.home": "الرئيسية", "nav.about": "عن SILA", "nav.reviews": "آراء العميلات", "nav.contact": "تواصلي معنا",
 
       "announce.phrase": "اكتشفي أحدث تشكيلات SILA ✨",
 
       "hero.eyebrow": "أزياء نسائية · موسم جديد 2026",
       "hero.title": "أناقتكِ تبدأ من <span class=\"accent\">SILA</span>",
       "hero.desc": "اكتشفي قطعًا صُممت لتمنحكِ أناقة تشبهكِ.",
-      "hero.explore": "اكتشفي المجموعة", "hero.contactCta": "تواصلي معنا",
+      "hero.explore": "اكتشفي SILA", "hero.contactCta": "تواصلي معنا",
       "hero.statPieces": "تصميم جديد", "hero.statRating": "تقييم العميلات", "hero.statSeason": "موسم جديد",
-      "hero.chipNew": "أحدث مجموعة", "hero.scroll": "اكتشفي المزيد",
+      "hero.chipNew": "موسم جديد 2026", "hero.scroll": "اكتشفي المزيد",
 
       "story.tagline": "SILA — حيث تلتقي الأناقة بالثقة",
       "story.quote1": "«الأناقة هي درع الحياة اليومية.»",
@@ -271,14 +111,6 @@
 
       "marquee.elegance": "أناقة", "marquee.femininity": "أنوثة", "marquee.confidence": "ثقة",
       "marquee.quality": "جودة", "marquee.modern": "عصرية", "marquee.luxury": "فخامة",
-
-      "cat.kicker": "المجموعات", "cat.title": "تسوقي حسب الفئة", "cat.sub": "كل ما تحتاجينه لإطلالة متكاملة وأنيقة.",
-      "cat.dresses": "فساتين", "cat.shirts": "قمصان", "cat.sets": "أطقم", "cat.scarves": "شالات",
-      "cat.hijab": "حجاب", "cat.pants": "بناطيل", "cat.newCollection": "المجموعة الجديدة",
-
-      "coll.kicker": "أحدث ما وصل", "coll.title": "أحدث مجموعة", "coll.sub": "قطع جديدة لإطلالة مختلفة كل مرة.",
-
-      "best.kicker": "يحبها الكثيرات", "best.title": "الأكثر مبيعًا", "best.sub": "القطع المفضلة لدى عميلاتنا.",
 
       "edit.kicker": "إبداعية", "edit.line1": "الأناقة ليست مجرد ما ترتدينه...",
       "edit.line2": "بل الطريقة التي تشعرين بها عندما ترتدينه.",
@@ -307,7 +139,7 @@
       "cta.contact": "تواصلي مع SILA", "cta.follow": "تابعينا على Instagram",
 
       "footer.desc": "لأن أناقتكِ تستحق أن تكون مختلفة.",
-      "footer.linksTitle": "روابط سريعة", "footer.collectionsTitle": "المجموعات", "footer.contactTitle": "تواصلي معنا",
+      "footer.linksTitle": "روابط سريعة", "footer.contactTitle": "تواصلي معنا",
       "footer.instagram": "راسلينا على انستجرام", "footer.facebook": "صفحة الفيسبوك", "footer.tiktok": "تيك توك",
       "footer.hours": "متاحون يوميًا · 10 صباحًا – 11 مساءً",
       "footer.rights": "© 2026 SILA. جميع الحقوق محفوظة.",
@@ -323,28 +155,18 @@
       "meta.title": "SILA | Women's Fashion & Elegant Style",
       "meta.desc": "Discover SILA women's fashion — elegant, modern pieces designed to reflect your unique style.",
 
-      "common.search": "Search", "common.theme": "Toggle theme", "common.close": "Close",
-      "common.explore": "Explore Collection", "common.favorite": "Add to Favorites", "common.instagram": "Instagram",
-      "common.favAdded": "Added to favorites ❤",
-      "common.favRemoved": "Removed from favorites",
+      "common.theme": "Toggle theme", "common.close": "Close", "common.instagram": "Instagram",
 
-      "product.quickView": "Quick View",
-      "product.favAria": "Add to favorites",
-      "product.favAriaActive": "In favorites",
-      "search.placeholder": "Search for your favorite piece...",
-      "search.empty": "We couldn't find what you're looking for.",
-
-      "nav.home": "Home", "nav.collections": "Collections", "nav.newCollection": "New Collection",
-      "nav.bestSellers": "Best Sellers", "nav.about": "About", "nav.reviews": "Reviews", "nav.contact": "Contact",
+      "nav.home": "Home", "nav.about": "About", "nav.reviews": "Reviews", "nav.contact": "Contact",
 
       "announce.phrase": "Discover the New SILA Collection ✨",
 
       "hero.eyebrow": "Women's Fashion · New Season 2026",
       "hero.title": "Your Elegance Starts With <span class=\"accent\">SILA</span>",
       "hero.desc": "Discover pieces designed to reflect your unique style.",
-      "hero.explore": "Explore Collection", "hero.contactCta": "Contact Us",
+      "hero.explore": "Discover SILA", "hero.contactCta": "Contact Us",
       "hero.statPieces": "New Styles", "hero.statRating": "Customer Rating", "hero.statSeason": "New Season",
-      "hero.chipNew": "New Collection", "hero.scroll": "Scroll to discover",
+      "hero.chipNew": "New Season 2026", "hero.scroll": "Scroll to discover",
 
       "story.tagline": "SILA — where elegance meets confidence",
       "story.quote1": "“Fashion is the armour to survive everyday life.”",
@@ -352,14 +174,6 @@
 
       "marquee.elegance": "Elegance", "marquee.femininity": "Femininity", "marquee.confidence": "Confidence",
       "marquee.quality": "Quality", "marquee.modern": "Modern", "marquee.luxury": "Luxury",
-
-      "cat.kicker": "Collections", "cat.title": "Shop by Category", "cat.sub": "Everything you need for a complete, elegant look.",
-      "cat.dresses": "Dresses", "cat.shirts": "Shirts", "cat.sets": "Sets", "cat.scarves": "Scarves",
-      "cat.hijab": "Hijab", "cat.pants": "Pants", "cat.newCollection": "New Collection",
-
-      "coll.kicker": "Latest Drop", "coll.title": "New Collection", "coll.sub": "Fresh pieces for a different look every time.",
-
-      "best.kicker": "Loved By Many", "best.title": "Best Sellers", "best.sub": "Our customers' most loved pieces.",
 
       "edit.kicker": "Editorial", "edit.line1": "Elegance is not just what you wear…",
       "edit.line2": "It's how you feel when you wear it.",
@@ -388,7 +202,7 @@
       "cta.contact": "Contact SILA", "cta.follow": "Follow on Instagram",
 
       "footer.desc": "Because your style deserves to be different.",
-      "footer.linksTitle": "Quick Links", "footer.collectionsTitle": "Collections", "footer.contactTitle": "Get In Touch",
+      "footer.linksTitle": "Quick Links", "footer.contactTitle": "Get In Touch",
       "footer.instagram": "Message us on Instagram", "footer.facebook": "Facebook Page", "footer.tiktok": "TikTok",
       "footer.hours": "Available daily · 10 AM – 11 PM",
       "footer.rights": "© 2026 SILA. All Rights Reserved.",
@@ -402,9 +216,9 @@
   };
 
   /* ------------------------------------------------------------
-     8. STATE
+     6. STATE
      ------------------------------------------------------------ */
-  const LS = { theme: "sila-theme", lang: "sila-lang", favs: "sila-favs" };
+  const LS = { theme: "sila-theme", lang: "sila-lang" };
 
   let state = { lang: "en", theme: "light" };
   const html = document.documentElement;
@@ -416,65 +230,17 @@
   const t = (key) => (translations[state.lang] && translations[state.lang][key]) || translations.en[key] || key;
   const isAr = () => state.lang === "ar";
 
-  let bestSwiper = null, reviewSwiper = null;
+  let reviewSwiper = null;
 
   /* ------------------------------------------------------------
-     9. HELPERS
+     7. HELPERS
      ------------------------------------------------------------ */
   function starSvg(size) {
     return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L21.8 9.3l-5 4.6 1.3 6.9L12 17.8 5.9 20.8l1.3-6.9-5-4.6 6.9-1.04z"/></svg>`;
   }
 
-  function stars(size = 14) {
-    return `<span class="stars" aria-hidden="true">${starSvg(size).repeat(5)}</span>`;
-  }
-
-  function heartSvg() {
-    return `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>`;
-  }
-
-  function eyeSvg() {
-    return `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>`;
-  }
-
-  function arrowSvg() {
-    return `<svg class="cat-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
-  }
-
-  function getFavs() {
-    try { return JSON.parse(localStorage.getItem(LS.favs)) || []; } catch (e) { return []; }
-  }
-  function saveFavs(favs) { localStorage.setItem(LS.favs, JSON.stringify(favs)); }
-  function isFav(id) { return getFavs().includes(id); }
-
-  /* ---------- Product card markup ---------- */
-  function productCardHTML(p, opts = {}) {
-    const badge = p.badgeAr ? ` <span class="product-badge ${opts.altBadge ? "badge-alt" : ""}">${isAr() ? p.badgeAr : p.badgeEn}</span>` : "";
-    const favActive = isFav(p.id) ? " active" : "";
-    const favAria = isFav(p.id) ? t("product.favAriaActive") : t("product.favAria");
-    const oldPrice = p.oldPrice ? `<s class="price-old">${p.oldPrice}</s>` : "";
-    const name = isAr() ? p.nameAr : p.nameEn;
-    const cat = isAr() ? p.categoryAr : p.categoryEn;
-
-    return `
-      <article class="product-card" data-id="${p.id}" data-name="${(p.nameAr + " " + p.nameEn).toLowerCase()}" data-cat="${(p.categoryAr + " " + p.categoryEn).toLowerCase()}" data-price="${p.price}"${opts.noReveal ? "" : ` data-reveal style="--rd:${p.id % 3}"`}>
-        <div class="product-media">
-          <img class="product-img" src="${p.image}" alt="${name}" loading="lazy" />
-          ${badge}
-          <button class="fav-btn${favActive}" data-fav="${p.id}" aria-label="${favAria}" aria-pressed="${isFav(p.id)}">${heartSvg()}</button>
-          <button class="view-btn" data-quickview="${p.id}">${eyeSvg()}<span>${t("product.quickView")}</span></button>
-        </div>
-        <div class="product-info">
-          <span class="product-cat">${cat}</span>
-          <h3 class="product-name">${name}</h3>
-          <div class="product-rate">${stars()} <span class="count">${p.rating.toFixed(1)} (${p.reviews})</span></div>
-          <div class="product-price-row"><span class="price">${p.price}</span>${oldPrice}</div>
-        </div>
-      </article>`;
-  }
-
   /* ------------------------------------------------------------
-     10. RENDER — static images
+     8. RENDER — static images
      ------------------------------------------------------------ */
   function setStaticImages() {
     $("#heroImg").src = images.hero;
@@ -487,38 +253,7 @@
   }
 
   /* ------------------------------------------------------------
-     11. RENDER — categories
-     ------------------------------------------------------------ */
-  function renderCategories() {
-    const grid = $("#categoriesGrid");
-    const link = t("common.explore");
-    grid.innerHTML = categories.map((c, i) => {
-      const name = categoryNames[c.key];
-      return `
-        <a href="#new-collection" class="cat-card ${c.span}" data-reveal style="--rd:${i % 3}" aria-label="${isAr() ? name.ar : name.en}">
-          <span class="cat-img"><img src="${c.image}" alt="${isAr() ? name.ar : name.en}" loading="lazy" /></span>
-          <span class="cat-info">
-            <span class="cat-badge">${isAr() ? c.badgeAr : c.badgeEn}</span>
-            <span class="cat-name">${isAr() ? name.ar : name.en}</span>
-            <span class="cat-link">${link} ${arrowSvg()}</span>
-          </span>
-        </a>`;
-    }).join("");
-  }
-
-  /* ------------------------------------------------------------
-     12. RENDER — products
-     ------------------------------------------------------------ */
-  function renderProducts() {
-    const featured = products.filter(p => p.featured);
-    $("#productGrid").innerHTML = featured.map(p => productCardHTML(p)).join("");
-
-    const bests = products.filter(p => p.bestSeller);
-    $("#bestSellersGrid").innerHTML = bests.map(p => productCardHTML(p, { altBadge: true, noReveal: true })).join("");
-  }
-
-  /* ------------------------------------------------------------
-     13. RENDER — reviews
+     9. RENDER — reviews
      ------------------------------------------------------------ */
   function renderReviews() {
     const grid = $("#reviewsGrid");
@@ -542,7 +277,7 @@
   }
 
   /* ------------------------------------------------------------
-     14. RENDER — gallery
+     10. RENDER — gallery
      ------------------------------------------------------------ */
   function renderGallery() {
     const grid = $("#galleryGrid");
@@ -555,7 +290,7 @@
   }
 
   /* ------------------------------------------------------------
-     15. ANNOUNCEMENT MARQUEE
+     11. ANNOUNCEMENT MARQUEE
      ------------------------------------------------------------ */
   function renderAnnouncement() {
     const track = $("#announceTrack");
@@ -569,7 +304,7 @@
   }
 
   /* ------------------------------------------------------------
-     16. I18N APPLY
+     12. I18N APPLY
      ------------------------------------------------------------ */
   function applyI18n() {
     html.lang = state.lang;
@@ -597,12 +332,8 @@
     // Dynamic content
     setStaticImages();
     renderAnnouncement();
-    renderCategories();
-    renderProducts();
     renderReviews();
     renderGallery();
-
-    refreshFavUI();
   }
 
   function setMeta(name, content) {
@@ -612,7 +343,7 @@
   }
 
   /* ------------------------------------------------------------
-     17. THEME
+     13. THEME
      ------------------------------------------------------------ */
   function applyTheme() {
     html.setAttribute("data-theme", state.theme);
@@ -626,10 +357,9 @@
   }
 
   /* ------------------------------------------------------------
-     18. LANGUAGE
+     14. LANGUAGE
      ------------------------------------------------------------ */
   function setLang(lang) {
-    if (bestSwiper) { bestSwiper.destroy(true, true); bestSwiper = null; }
     if (reviewSwiper) { reviewSwiper.destroy(true, true); reviewSwiper = null; }
     state.lang = lang;
     localStorage.setItem(LS.lang, lang);
@@ -642,32 +372,8 @@
   }
 
   /* ------------------------------------------------------------
-     19. SWIPER CAROUSELS
+     15. SWIPER CAROUSELS
      ------------------------------------------------------------ */
-  function initBestSwiper() {
-    const el = $(".best-swiper");
-    if (!el) return null;
-    if (!window.Swiper) {
-      el.classList.add("swiper-fallback");
-      return null;
-    }
-    el.classList.remove("swiper-fallback");
-    return new window.Swiper(el, {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: true,
-      speed: 700,
-      dir: isAr() ? "rtl" : "ltr",
-      navigation: { prevEl: "#bestPrev", nextEl: "#bestNext" },
-      pagination: { el: el.querySelector(".swiper-pagination"), clickable: true },
-      breakpoints: {
-        560: { slidesPerView: 2 },
-        900: { slidesPerView: 3 },
-        1280: { slidesPerView: 4 }
-      }
-    });
-  }
-
   function initReviewSwiper() {
     const el = $(".reviews-swiper");
     if (!el) return null;
@@ -689,117 +395,12 @@
   }
 
   function initCarousels() {
-    if (bestSwiper) { bestSwiper.destroy(true, true); bestSwiper = null; }
     if (reviewSwiper) { reviewSwiper.destroy(true, true); reviewSwiper = null; }
-    bestSwiper = initBestSwiper();
     reviewSwiper = initReviewSwiper();
   }
 
   /* ------------------------------------------------------------
-     20. FAVORITES
-     ------------------------------------------------------------ */
-  function refreshFavUI() {
-    $$(".fav-btn").forEach(btn => {
-      const id = Number(btn.dataset.fav);
-      const active = isFav(id);
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", active);
-      btn.setAttribute("aria-label", active ? t("product.favAriaActive") : t("product.favAria"));
-    });
-    const qvFav = $("#qvFav");
-    if (qvFav && qvFav.dataset.favId) {
-      qvFav.classList.toggle("active", isFav(Number(qvFav.dataset.favId)));
-    }
-  }
-
-  function toggleFav(id) {
-    let favs = getFavs();
-    const idx = favs.indexOf(id);
-    let added = false;
-    if (idx > -1) favs.splice(idx, 1);
-    else { favs.push(id); added = true; }
-    saveFavs(favs);
-    refreshFavUI();
-    toast(added ? t("common.favAdded") : t("common.favRemoved"));
-  }
-
-  /* ------------------------------------------------------------
-     21. TOAST
-     ------------------------------------------------------------ */
-  let toastTimer = null;
-  function toast(msg) {
-    const el = $("#toast");
-    el.textContent = msg;
-    el.classList.add("show");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => el.classList.remove("show"), 2400);
-  }
-
-  /* ------------------------------------------------------------
-     22. QUICK VIEW MODAL
-     ------------------------------------------------------------ */
-  function openQuickView(id) {
-    const p = products.find(x => x.id === Number(id));
-    if (!p) return;
-    const modal = $("#quickView");
-    $("#qvImage").src = p.image;
-    $("#qvImage").alt = isAr() ? p.nameAr : p.nameEn;
-    $("#qvCategory").textContent = isAr() ? p.categoryAr : p.categoryEn;
-    $("#qvName").textContent = isAr() ? p.nameAr : p.nameEn;
-    $("#qvRating").innerHTML = `${stars()} <span class="count">${p.rating.toFixed(1)} (${p.reviews})</span>`;
-    $("#qvPrice").textContent = p.price;
-    $("#qvDesc").textContent = isAr() ? p.descAr : p.descEn;
-    $("#qvFav").dataset.favId = p.id;
-    refreshFavUI();
-    modal.hidden = false;
-    requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add("open")));
-    body.classList.add("no-scroll");
-    modal.querySelector(".modal-close").focus();
-  }
-
-  function closeModal() {
-    const modal = $("#quickView");
-    modal.classList.remove("open");
-    setTimeout(() => { modal.hidden = true; body.classList.remove("no-scroll"); }, 350);
-  }
-
-  /* ------------------------------------------------------------
-     23. SEARCH
-     ------------------------------------------------------------ */
-  function openSearch() {
-    const overlay = $("#searchOverlay");
-    overlay.hidden = false;
-    requestAnimationFrame(() => requestAnimationFrame(() => overlay.classList.add("open")));
-    body.classList.add("no-scroll");
-    $("#searchInput").value = "";
-    $("#searchResults").innerHTML = "";
-    $("#searchEmpty").hidden = true;
-    setTimeout(() => $("#searchInput").focus(), 80);
-  }
-
-  function closeSearch() {
-    const overlay = $("#searchOverlay");
-    overlay.classList.remove("open");
-    setTimeout(() => { overlay.hidden = true; body.classList.remove("no-scroll"); }, 350);
-  }
-
-  function runSearch(query) {
-    const q = query.trim().toLowerCase();
-    const resultsBox = $("#searchResults");
-    const empty = $("#searchEmpty");
-    if (!q) { resultsBox.innerHTML = ""; empty.hidden = true; return; }
-    const matches = products.filter(p => {
-      const hay = `${p.nameAr} ${p.nameEn} ${p.categoryAr} ${p.categoryEn} ${p.price}`.toLowerCase();
-      return hay.includes(q);
-    });
-    empty.hidden = matches.length > 0;
-    resultsBox.innerHTML = matches.map(p => productCardHTML(p, { altBadge: true })).join("");
-    resultsBox.querySelectorAll("[data-fav]").forEach(btn => { btn.classList.toggle("active", isFav(Number(btn.dataset.fav))); });
-    observeReveals();
-  }
-
-  /* ------------------------------------------------------------
-     24. REVEAL OBSERVER
+     16. REVEAL OBSERVER
      ------------------------------------------------------------ */
   let revealObserver = null;
   function observeReveals() {
@@ -821,14 +422,14 @@
   }
 
   /* ------------------------------------------------------------
-     25. SCROLL SPY + NAVBAR
+     17. SCROLL SPY + NAVBAR
      ------------------------------------------------------------ */
   function onScroll() {
     const nav = $("#navbar");
     nav.classList.toggle("scrolled", window.scrollY > 12);
     $("#toTop").classList.toggle("visible", window.scrollY > 650);
 
-    const sections = ["home", "categories", "new-collection", "best-sellers", "about", "reviews"];
+    const sections = ["home", "about", "reviews"];
     const pos = window.scrollY + window.innerHeight * 0.35;
     let current = "home";
     sections.forEach(id => {
@@ -840,7 +441,7 @@
   }
 
   /* ------------------------------------------------------------
-     26. MOBILE MENU
+     18. MOBILE MENU
      ------------------------------------------------------------ */
   function openMenu() {
     $("#mobileMenu").classList.add("open");
@@ -862,7 +463,7 @@
   }
 
   /* ------------------------------------------------------------
-     27. EVENTS
+     19. EVENTS
      ------------------------------------------------------------ */
   function bindEvents() {
     // Theme + language (both navbar & mobile menu)
@@ -884,34 +485,15 @@
     window.addEventListener("scroll", onScroll, { passive: true });
     $("#toTop").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-    // Search
-    $("#searchBtn").addEventListener("click", openSearch);
-    $("#searchClose").addEventListener("click", closeSearch);
-    $("#searchOverlay").addEventListener("click", e => { if (e.target.closest(".search-box") === null && e.target !== $("#searchInput")) closeSearch(); });
-    $("#searchForm").addEventListener("submit", e => e.preventDefault());
-    $("#searchInput").addEventListener("input", e => runSearch(e.target.value));
-
-    // Quick view modal
-    document.addEventListener("click", e => {
-      const qv = e.target.closest("[data-quickview]");
-      if (qv) openQuickView(qv.dataset.quickview);
-      const fav = e.target.closest("[data-fav]");
-      if (fav) toggleFav(Number(fav.dataset.fav));
-      if (e.target.closest("[data-close-modal]")) closeModal();
-    });
-    $("#qvFav").addEventListener("click", () => { const fid = $("#qvFav").dataset.favId; if (fid !== undefined && fid !== "") toggleFav(Number(fid)); });
-
     // ESC closes overlays
     document.addEventListener("keydown", e => {
       if (e.key !== "Escape") return;
       closeMenu();
-      closeModal();
-      closeSearch();
     });
   }
 
   /* ------------------------------------------------------------
-     28. LOADER
+     20. LOADER
      ------------------------------------------------------------ */
   function hideLoader() {
     const loader = $("#loader");
@@ -921,7 +503,7 @@
   }
 
   /* ------------------------------------------------------------
-     29. BOOT
+     21. BOOT
      ------------------------------------------------------------ */
   function init() {
     // Theme from localStorage or OS preference
