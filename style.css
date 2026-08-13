@@ -830,8 +830,13 @@ html[dir="rtl"] .why-card::before { transform-origin: right; }
   flex-basis: 100%; width: 100%; text-align: center;
   margin-block-start: 6px; font-size: 0.82rem; color: #93848A;
 }
-.footer-phone bdi { font-weight: 700; letter-spacing: 0.02em; color: var(--pink); }
-[data-theme="dark"] .footer-phone bdi { color: #FF9Ab0; }
+.footer-phone a {
+  font-weight: 700; letter-spacing: 0.02em;
+  color: #25D366; text-decoration: none;
+  border-block-end: 1px dashed rgb(37, 211, 102, 0.55);
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+}
+.footer-phone a:hover { color: #32E075; border-color: currentColor; background: rgb(37, 211, 102, 0.1); }
 [data-theme="dark"] .footer-phone { color: #8E8E98; }
 
 /* ============================================================
