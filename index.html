@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="light">
+<html lang="en" dir="ltr" data-theme="light" data-page="home">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Discover SILA women's fashion — elegant, modern pieces designed to reflect your unique style." />
+  <meta name="description" content="Discover SILA women's fashion in Egypt, featuring elegant dresses, outfits, scarves and carefully selected styles for every look." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#FFF9FA" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SILA" />
-  <meta property="og:title" content="SILA | Women's Fashion &amp; Elegant Style" />
-  <meta property="og:description" content="Discover SILA women's fashion — elegant, modern pieces designed to reflect your unique style." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:title" content="SILA | Modern Women's Fashion &amp; Clothing in Egypt" />
+  <meta property="og:description" content="Discover SILA women's fashion in Egypt, featuring elegant dresses, outfits, scarves and carefully selected styles for every look." />
+  <meta property="og:image" content="https://sila-fashion.com/assets/brand/sila-og-image.png" />
   <meta property="og:url" content="https://sila-fashion.com/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_EG" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SILA | Women's Fashion &amp; Elegant Style" />
-  <meta name="twitter:description" content="Discover SILA women's fashion — elegant, modern pieces designed to reflect your unique style." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:title" content="SILA | Modern Women's Fashion &amp; Clothing in Egypt" />
+  <meta name="twitter:description" content="Discover SILA women's fashion in Egypt, featuring elegant dresses, outfits, scarves and carefully selected styles for every look." />
+  <meta name="twitter:image" content="https://sila-fashion.com/assets/brand/sila-og-image.png" />
 
-  <!-- Canonical (placeholder — update with the real domain) -->
+  <!-- Canonical -->
   <link rel="canonical" href="https://sila-fashion.com/" />
 
+  <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
-  <meta name="theme-color" content="#0B0B0B" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
 
-  <title>SILA | Women's Fashion &amp; Elegant Style</title>
+  <title>SILA | Modern Women's Fashion &amp; Clothing in Egypt</title>
 
-  <!-- Restore saved theme + language before first paint (no flash) -->
+  <!-- Restore saved theme + language before first paint (no flash); flag JS for reveal fallback -->
   <script>
     (function () {
       try {
+        document.documentElement.classList.add('js');
         var th = localStorage.getItem('sila-theme');
         if (th === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
         var lg = localStorage.getItem('sila-lang');
@@ -56,13 +64,31 @@
     "@type": "Organization",
     "name": "SILA",
     "url": "https://sila-fashion.com/",
-    "logo": "https://sila-fashion.com/assets/icons/favicon.svg",
+    "logo": "https://sila-fashion.com/assets/brand/sila-icon.svg",
+    "image": "https://sila-fashion.com/assets/brand/sila-og-image.png",
     "description": "SILA is a premium women's fashion store offering elegant, modern pieces.",
     "sameAs": [
-      "https://www.facebook.com/share/1JP3XEn1RE/",
+      "https://www.facebook.com/share/1JP3XEn1RE/?mibextid=wwXIfr",
       "https://www.instagram.com/sila_scarf.96",
       "https://www.tiktok.com/@sill_womens_fashion"
     ]
+  }
+  </script>
+
+  <!-- WebSite structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SILA",
+    "url": "https://sila-fashion.com/",
+    "inLanguage": ["en", "ar"],
+    "publisher": {
+      "@type": "Organization",
+      "name": "SILA",
+      "url": "https://sila-fashion.com/",
+      "logo": "https://sila-fashion.com/assets/brand/sila-icon.svg"
+    }
   }
   </script>
 </head>
@@ -97,9 +123,12 @@
       </a>
 
       <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
-        <a href="#home" class="nav-link active" data-i18n="nav.home">Home</a>
-        <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
-        <a href="#reviews" class="nav-link" data-i18n="nav.reviews">Reviews</a>
+        <a href="#home" class="nav-link active" data-nav="home" data-i18n="nav.home">Home</a>
+        <a href="collections/" class="nav-link" data-nav="collections" data-i18n="nav.collections">Collections</a>
+        <a href="#about" class="nav-link" data-nav="about" data-i18n="nav.about">About</a>
+        <a href="#reviews" class="nav-link" data-nav="reviews" data-i18n="nav.reviews">Reviews</a>
+        <a href="contact/" class="nav-link" data-nav="contact" data-i18n="nav.contact">Contact</a>
+        <a href="faq/" class="nav-link" data-nav="faq" data-i18n="nav.faq">FAQ</a>
       </nav>
 
       <div class="nav-tools">
@@ -133,9 +162,12 @@
       </button>
     </div>
     <nav class="mm-links" aria-label="Mobile navigation">
-      <a href="#home" class="mm-link" data-i18n="nav.home">Home</a>
-      <a href="#about" class="mm-link" data-i18n="nav.about">About</a>
-      <a href="#reviews" class="mm-link" data-i18n="nav.reviews">Reviews</a>
+      <a href="#home" class="mm-link" data-nav="home" data-i18n="nav.home">Home</a>
+      <a href="collections/" class="mm-link" data-nav="collections" data-i18n="nav.collections">Collections</a>
+      <a href="#about" class="mm-link" data-nav="about" data-i18n="nav.about">About</a>
+      <a href="#reviews" class="mm-link" data-nav="reviews" data-i18n="nav.reviews">Reviews</a>
+      <a href="contact/" class="mm-link" data-nav="contact" data-i18n="nav.contact">Contact</a>
+      <a href="faq/" class="mm-link" data-nav="faq" data-i18n="nav.faq">FAQ</a>
     </nav>
     <div class="mm-tools">
       <button class="icon-btn mm-lang" id="mmLangBtn" aria-label="Switch language"><span id="mmLangText">AR</span></button>
@@ -234,6 +266,74 @@
         <span class="bm-word" data-marquee="luxury">Luxury</span><span class="bm-dot">✧</span>
       </div>
     </div>
+
+    <!-- ============ EXPLORE COLLECTIONS ============ -->
+    <section class="section explore" id="collections" aria-labelledby="exploreTitle">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="kicker" data-i18n="explore.kicker">Explore</span>
+          <h2 class="section-title" id="exploreTitle" data-i18n="explore.title">Explore SILA Collections</h2>
+          <p class="section-sub" data-i18n="explore.desc">From dresses to scarves and brand-new pieces — carefully curated collections for every look.</p>
+        </div>
+
+        <div class="explore-grid">
+          <a class="explore-card explore-featured" href="collections/" data-reveal>
+            <figure class="explore-img">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80" alt="SILA women's fashion collections" data-i18n-alt="alt.explore.collections" loading="lazy" />
+            </figure>
+            <div class="explore-info">
+              <h3 data-i18n="explore.card.collections">All Collections</h3>
+              <p data-i18n="explore.card.collectionsDesc">Browse every SILA category in one place.</p>
+              <span class="explore-link" data-i18n="common.viewCollection">View Collection</span>
+            </div>
+          </a>
+
+          <a class="explore-card" href="dresses/" data-reveal style="--rd:1">
+            <figure class="explore-img">
+              <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=700&q=80" alt="Elegant women's dress from the SILA collection" data-i18n-alt="alt.explore.dresses" loading="lazy" />
+            </figure>
+            <div class="explore-info">
+              <h3 data-i18n="explore.card.dresses">Dresses</h3>
+              <p data-i18n="explore.card.dressesDesc">Elegant dresses for daily looks and special occasions.</p>
+              <span class="explore-link" data-i18n="common.viewCollection">View Collection</span>
+            </div>
+          </a>
+
+          <a class="explore-card" href="womens-clothing/" data-reveal style="--rd:2">
+            <figure class="explore-img">
+              <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=700&q=80" alt="Modern women's clothing from SILA" data-i18n-alt="alt.explore.wc" loading="lazy" />
+            </figure>
+            <div class="explore-info">
+              <h3 data-i18n="explore.card.wc">Women's Clothing</h3>
+              <p data-i18n="explore.card.wcDesc">Modern women's clothing and outfits for every season.</p>
+              <span class="explore-link" data-i18n="common.viewCollection">View Collection</span>
+            </div>
+          </a>
+
+          <a class="explore-card" href="scarves/" data-reveal style="--rd:3">
+            <figure class="explore-img">
+              <img src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=700&q=80" alt="Women's scarf from SILA" data-i18n-alt="alt.explore.scarves" loading="lazy" />
+            </figure>
+            <div class="explore-info">
+              <h3 data-i18n="explore.card.scarves">Scarves &amp; Hijab</h3>
+              <p data-i18n="explore.card.scarvesDesc">Shawls and hijab pieces chosen with care.</p>
+              <span class="explore-link" data-i18n="common.viewCollection">View Collection</span>
+            </div>
+          </a>
+
+          <a class="explore-card" href="new-collection/" data-reveal style="--rd:4">
+            <figure class="explore-img">
+              <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=700&q=80" alt="New SILA collection for the season" data-i18n-alt="alt.explore.new" loading="lazy" />
+            </figure>
+            <div class="explore-info">
+              <h3 data-i18n="explore.card.new">New Collection</h3>
+              <p data-i18n="explore.card.newDesc">Discover the newest season's looks first.</p>
+              <span class="explore-link" data-i18n="common.viewCollection">View Collection</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- ============ EDITORIAL ============ -->
     <section class="section editorial" id="editorial">
@@ -434,9 +534,19 @@
       <nav class="footer-col" aria-label="Footer links">
         <h4 data-i18n="footer.linksTitle">Quick Links</h4>
         <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="collections/" data-i18n="nav.collections">Collections</a>
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
-        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="contact/" data-i18n="nav.contact">Contact</a>
+        <a href="faq/" data-i18n="nav.faq">FAQ</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Categories">
+        <h4 data-i18n="footer.categoriesTitle">Categories</h4>
+        <a href="dresses/" data-i18n="explore.card.dresses">Dresses</a>
+        <a href="womens-clothing/" data-i18n="explore.card.wc">Women's Clothing</a>
+        <a href="scarves/" data-i18n="explore.card.scarves">Scarves &amp; Hijab</a>
+        <a href="new-collection/" data-i18n="explore.card.new">New Collection</a>
       </nav>
 
       <div class="footer-col">

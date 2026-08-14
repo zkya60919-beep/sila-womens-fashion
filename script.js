@@ -1,13 +1,14 @@
 /* ============================================================
    SILA — Premium Women's Fashion
-   Vanilla JS: i18n · Theme · Reviews · UI
+   Vanilla JS: i18n · Theme · Reviews · UI · SEO helpers
+   Shared across all SILA pages (data-page aware).
    ============================================================ */
 (function () {
   "use strict";
 
   /* ------------------------------------------------------------
-     1. IMAGE CONFIGURATION — single source of truth for every image.
-        Replace any URL here to swap the whole site's imagery.
+     1. IMAGE CONFIGURATION — single source of truth for every
+        image rendered by JS. Replace any URL here to swap imagery.
      ------------------------------------------------------------ */
   const images = {
     hero: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1400&q=80",
@@ -31,7 +32,8 @@
   const SOCIAL = {
     instagram: "https://www.instagram.com/sila_scarf.96?igsh=anVldXRsYnl3MHF2&utm_source=qr",
     facebook: "https://www.facebook.com/share/1JP3XEn1RE/?mibextid=wwXIfr",
-    tiktok: "https://www.tiktok.com/@sill_womens_fashion?_r=1&_t=ZS-92lfD122CHI"
+    tiktok: "https://www.tiktok.com/@sill_womens_fashion?_r=1&_t=ZS-92lfD122CHI",
+    whatsapp: "https://wa.me/201023681114"
   };
 
   /* ------------------------------------------------------------
@@ -85,16 +87,34 @@
   ];
 
   /* ------------------------------------------------------------
-     5. TRANSLATIONS
+     5. PER-PAGE META (title / description keys per data-page)
+     ------------------------------------------------------------ */
+  const PAGE_META = {
+    home: { title: "meta.title", desc: "meta.desc" },
+    collections: { title: "page.collections.title", desc: "page.collections.desc" },
+    dresses: { title: "page.dresses.title", desc: "page.dresses.desc" },
+    "womens-clothing": { title: "page.wc.title", desc: "page.wc.desc" },
+    scarves: { title: "page.scarves.title", desc: "page.scarves.desc" },
+    "new-collection": { title: "page.newCollection.title", desc: "page.newCollection.desc" },
+    about: { title: "page.about.title", desc: "page.about.desc" },
+    contact: { title: "page.contact.title", desc: "page.contact.desc" },
+    faq: { title: "page.faq.title", desc: "page.faq.desc" },
+    error: { title: "page.error.title", desc: "page.error.desc" }
+  };
+
+  /* ------------------------------------------------------------
+     6. TRANSLATIONS
      ------------------------------------------------------------ */
   const translations = {
     ar: {
-      "meta.title": "SILA | أزياء نسائية عصرية وأنيقة",
-      "meta.desc": "اكتشفي عالم SILA للأزياء النسائية، تصميمات أنيقة وعصرية تناسب ذوقكِ وتمنحكِ إطلالة مميزة.",
+      "meta.title": "SILA | أزياء وملابس حريمي عصرية وأنيقة في مصر",
+      "meta.desc": "اكتشفي SILA للأزياء والملابس النسائية. تشكيلة أنيقة وعصرية من الفساتين والأطقم والشالات وغيرها، مع تجربة تسوق مميزة.",
 
       "common.theme": "تبديل المظهر", "common.close": "إغلاق", "common.instagram": "انستجرام",
+      "common.viewCollection": "تصفحي التشكيلة", "common.viewAll": "تصفحي الكل", "common.backHome": "العودة إلى SILA",
 
       "nav.home": "الرئيسية", "nav.about": "عن SILA", "nav.reviews": "آراء العميلات", "nav.contact": "تواصلي معنا",
+      "nav.collections": "التشكيلات", "nav.faq": "الأسئلة الشائعة",
 
       "announce.phrase": "اكتشفي أحدث تشكيلات SILA ✨",
 
@@ -139,7 +159,7 @@
       "cta.contact": "تواصلي مع SILA", "cta.follow": "تابعينا على Instagram",
 
       "footer.desc": "لأن أناقتكِ تستحق أن تكون مختلفة.",
-      "footer.linksTitle": "روابط سريعة", "footer.contactTitle": "تواصلي معنا",
+      "footer.linksTitle": "روابط سريعة", "footer.categoriesTitle": "التصنيفات", "footer.contactTitle": "تواصلي معنا",
       "footer.devBy": "من تطوير", "footer.devOf": "· التابع لشركة Technikos",
       "footer.devPhone": "رقم الشركة المصممة للموقع:",
       "footer.instagram": "راسلينا على انستجرام", "footer.facebook": "صفحة الفيسبوك", "footer.tiktok": "تيك توك", "footer.storePhone": "رقم المحل",
@@ -147,19 +167,137 @@
       "footer.rights": "© 2026 SILA. جميع الحقوق محفوظة.",
       "footer.made": "صُنع بحب وأناقة ✦",
 
+      "explore.kicker": "تشكيلاتنا", "explore.title": "اكتشفي تشكيلات SILA",
+      "explore.desc": "من الفساتين إلى الشالات والقطع الجديدة — تشكيلات مختارة بعناية لتناسب إطلالتك.",
+      "explore.card.collections": "كل التشكيلات",
+      "explore.card.collectionsDesc": "تصفحي كل فئات وأزياء SILA في مكان واحد.",
+      "explore.card.dresses": "فساتين حريمي",
+      "explore.card.dressesDesc": "فساتين أنيقة تناسب إطلالاتك اليومية والمناسبات.",
+      "explore.card.wc": "ملابس نسائية",
+      "explore.card.wcDesc": "ملابس وأطقم نسائية عصرية لكل موسم.",
+      "explore.card.scarves": "شالات وحجاب",
+      "explore.card.scarvesDesc": "شالات وقطع حجاب مختارة بعناية.",
+      "explore.card.new": "المجموعة الجديدة",
+      "explore.card.newDesc": "اكتشفي أحدث إطلالات الموسم أولاً بأول.",
+
+      "crumb.home": "الرئيسية",
+
+      "related.title": "تشكيلات ذات صلة",
+      "page.cta.title": "تحتاجين مساعدة في الاختيار؟",
+      "page.cta.desc": "تواصلي مع SILA عبر واتساب أو انستجرام وسنساعدك في اختيار القطعة المثالية.",
+
+      "page.collections.title": "تشكيلات SILA | أزياء وملابس نسائية في مصر",
+      "page.collections.desc": "اكتشفي تشكيلات SILA من الأزياء والملابس النسائية — فساتين، ملابس نسائية، شالات وإطلالات جديدة، مختارة بعناية لذوقك.",
+      "page.collections.h1": "اكتشفي تشكيلات SILA",
+      "page.collections.lead": "كل تشكيلة من تشكيلات SILA تُنسق حول فكرة واحدة: مساعدتك في العثور على ملابس نسائية عصرية وأنيقة تشبهكِ.",
+      "page.collections.p1": "منذ إطلاقها، تقدم SILA تشكيلات أزياء نسائية تجمع بين الأناقة العصرية والخامة الجيدة، لتكون كل قطعة إضافة حقيقية لإطلالتك.",
+      "page.collections.p2": "تصفحي الفئات التالية للوصول إلى الفساتين، الملابس النسائية، الشالات والمجموعة الجديدة، ولا تترددي في التواصل معنا لأي استفسار.",
+
+      "page.dresses.title": "فساتين حريمي في مصر | SILA",
+      "page.dresses.desc": "اكتشفي فساتين SILA النسائية — تصاميم عصرية وأنيقة تناسب الإطلالات اليومية والمناسبات الخاصة.",
+      "page.dresses.h1": "فساتين حريمي",
+      "page.dresses.lead": "تشكيلة الفساتين النسائية من SILA مصممة لتمنحك إطلالة أنيقة تجمع بين الراحة والجمال.",
+      "page.dresses.p1": "نسقي فستانك مع الشالات والإكسسوارات من SILA لإطلالة متكاملة تناسب مناسباتك المختلفة.",
+      "page.dresses.p2": "كل قطعة من تشكيلة SILA تُختار بعناية لتناسب ذوقك وتمنحك ثقة تنعكس على إطلالتك.",
+      "page.dresses.cap1": "فستان نسائي أنيق من تشكيلة SILA",
+      "page.dresses.cap2": "إطلالة فستان عصرية تليق بالمناسبات",
+      "page.dresses.cap3": "فستان نسائي بتصميم مريح وأنيق",
+      "page.dresses.cap4": "نسقي فستانك مع شالات SILA",
+
+      "page.wc.title": "ملابس نسائية عصرية في مصر | SILA",
+      "page.wc.desc": "اكتشفي تشكيلة SILA من الملابس النسائية العصرية — أطقم وإطلالات أنيقة مختارة بعناية لكل موسم.",
+      "page.wc.h1": "ملابس نسائية عصرية",
+      "page.wc.lead": "تشكيلة SILA من الملابس النسائية تجمع بين القطع العملية والتصميمات الأنيقة، لتناسب إطلالاتك اليومية وأوقاتك الخاصة.",
+      "page.wc.p1": "من الملابس الحريمي العصرية إلى الأطقم الأنيقة، تقدم SILA قطعًا تساعدك على بناء إطلالة متكاملة وأنيقة.",
+      "page.wc.p2": "تابعي تشكيلاتنا باستمرار لاكتشاف أحدث الموديلات والإطلالات، وتواصلي معنا لأي استفسار حول المقاسات أو التنسيق.",
+      "page.wc.cap1": "إطلالة نسائية عصرية من SILA",
+      "page.wc.cap2": "أطقم نسائية أنيقة من تشكيلة SILA",
+      "page.wc.cap3": "ملابس نسائية عصرية تناسب إطلالتك اليومية",
+
+      "page.scarves.title": "شالات وحجاب نسائي | SILA",
+      "page.scarves.desc": "اكتشفي شالات SILA النسائية وقطع الحجاب المختارة بعناية لتمنحك إطلالة راقية ومتكاملة.",
+      "page.scarves.h1": "شالات وحجاب نسائي",
+      "page.scarves.lead": "الشالات وقطع الحجاب جزء أساسي من هوية SILA، وتُختار بعناية لتناسب مختلف الأذواق والإطلالات.",
+      "page.scarves.p1": "نقدم شالات نسائية بتصميمات وألوان تمنحك لمسة أنيقة على إطلالتك اليومية والمناسبات.",
+      "page.scarves.p2": "اكتشفي تشكيلتنا المتجددة من الشالات وقطع الحجاب، وتواصلي معنا لمزيد من التفاصيل والصور.",
+      "page.scarves.cap1": "شال نسائي أنيق من SILA",
+      "page.scarves.cap2": "إطلالة حجاب نسائي راقية",
+      "page.scarves.cap3": "شالات نسائية بتصميمات عصرية",
+
+      "page.newCollection.title": "المجموعة الجديدة | SILA",
+      "page.newCollection.desc": "اكتشفي أحدث مجموعة من SILA — قطع أزياء نسائية جديدة بتصميمات عصرية تواكب الموسم.",
+      "page.newCollection.h1": "أحدث مجموعة من SILA",
+      "page.newCollection.lead": "في كل موسم، نختار لك مجموعة جديدة من القطع العصرية التي تمنحك إطلالة مختلفة وأنيقة.",
+      "page.newCollection.p1": "المجموعة الجديدة تعكس روح الموسم — ألوان، قصات وتصميمات تواكب أحدث اتجاهات الأزياء النسائية.",
+      "page.newCollection.p2": "تابعي صفحاتنا على وسائل التواصل أولاً بأول للاطلاع على القطع الجديدة قبل الجميع.",
+      "page.newCollection.cap1": "إطلالة جديدة من مجموعة SILA",
+      "page.newCollection.cap2": "قطع عصرية من المجموعة الجديدة",
+      "page.newCollection.cap3": "أحدث موديلات SILA للموسم",
+
+      "page.about.title": "عن SILA | أزياء وملابس نسائية",
+      "page.about.desc": "تعرفي على قصة SILA — علامة أزياء نسائية تقدم ملابس عصرية وأنيقة مختارة بعناية في مصر.",
+      "page.about.h1": "عن SILA",
+      "page.about.lead": "SILA علامة أزياء نسائية بدأت من شغف بالأناقة، وتقدم ملابس عصرية مختارة بعناية لكل امرأة.",
+      "page.about.p1": "نؤمن أن الأناقة ليست مجرد ما ترتدينه، بل الطريقة التي تشعرين بها. لذلك نختار كل قطعة بعناية لتمنحك إطلالة راقية تشبهك.",
+      "page.about.p2": "نهتم بتجربتك من أول تواصل — بدءًا من مساعدتك في اختيار المقاس المناسب وحتى استلامك للقطعة التي اخترتها.",
+      "page.about.p3": "تابعينا على انستجرام وفيسبوك وتيك توك لاكتشاف أحدث تشكيلاتنا وإطلالاتنا.",
+
+      "page.contact.title": "تواصلي مع SILA | أزياء نسائية في مصر",
+      "page.contact.desc": "تواصلي مع SILA عبر واتساب أو انستجرام أو فيسبوك أو تيك توك، وسنكون سعداء بخدمتك.",
+      "page.contact.h1": "تواصلي مع SILA",
+      "page.contact.lead": "يسعدنا التواصل معك — أرسلي لنا طلباتك أو استفساراتك عبر أي من القنوات التالية وسنرد عليك في أقرب وقت.",
+      "page.contact.phoneTitle": "الهاتف وواتساب",
+      "page.contact.socialTitle": "تابعينا وراسلينا",
+      "page.contact.hoursTitle": "أوقات التواصل",
+      "page.contact.hoursValue": "متاحون يوميًا · 10 صباحًا – 11 مساءً (بتوقيت مصر)",
+      "page.contact.storePhone": "رقم المحل:",
+      "page.contact.instagram": "انستجرام", "page.contact.facebook": "فيسبوك", "page.contact.tiktok": "تيك توك",
+      "page.contact.orderNote": "أرسلي لنا طلبك أو استفسارك مباشرة عبر واتساب، وسنوافيك بكل التفاصيل والصور.",
+      "page.contact.socialNote": "تابعينا على وسائل التواصل لمشاهدة أحدث القطع والإطلالات أولاً بأول.",
+
+      "page.faq.title": "الأسئلة الشائعة | SILA",
+      "page.faq.desc": "إجابات عن الأسئلة الشائعة حول SILA — أنواع الملابس النسائية، التواصل، الطلب ومتابعة التشكيلات.",
+      "page.faq.h1": "الأسئلة الشائعة",
+      "page.faq.lead": "جمعنا لك إجابات عن أكثر الأسئلة شيوعًا حول SILA. إن لم تجدي إجابتك، تواصلي معنا وسنكون سعداء بمساعدتك.",
+
+      "faq.q1": "ما أنواع الملابس النسائية التي تقدمها SILA؟",
+      "faq.a1": "تقدم SILA تشكيلة مختارة من الأزياء النسائية — فساتين حريمي، ملابس وأطقم نسائية، شالات وقطع حجاب، بالإضافة إلى المجموعة الجديدة كل موسم.",
+      "faq.q2": "هل تقدم SILA ملابس نسائية عصرية؟",
+      "faq.a2": "نعم، تركز تشكيلات SILA على الملابس النسائية العصرية والأنيقة، مع متابعة أحدث الاتجاهات في عالم الأزياء.",
+      "faq.q3": "كيف يمكنني التواصل مع SILA؟",
+      "faq.a3": "يمكنك التواصل معنا عبر واتساب على الرقم 010 23681114، أو عبر رسائل انستجرام، فيسبوك وتيك توك.",
+      "faq.q4": "أين يمكنني متابعة أحدث تشكيلات SILA؟",
+      "faq.a4": "تابعي حسابنا على انستجرام @sila_scarf.96 وصفحتنا على فيسبوك وحسابنا على تيك توك @sill_womens_fashion لمشاهدة أحدث القطع والإطلالات أولاً بأول.",
+      "faq.q5": "هل يوجد محل فعلي لـ SILA؟",
+      "faq.a5": "SILA حاليًا علامة أزياء نسائية تعمل عبر الإنترنت — يمكنك الطلب مباشرة عبر واتساب. سيتم الإعلان عن أي محل فعلي على هذه الصفحة فور توفره.",
+      "faq.q6": "هل يمكنني طلب مقاس محدد؟",
+      "faq.a6": "نعم، عند التواصل معنا عبر واتساب أخبرينا بالمقاس المطلوب وسنؤكد لك توافره قبل الطلب لضمان أفضل مقاس يناسبك.",
+
+      "page.error.title": "الصفحة غير موجودة | SILA",
+      "page.error.desc": "عذرًا، الصفحة التي تبحثين عنها غير موجودة.",
+      "page.error.h1": "عذرًا، الصفحة التي تبحثين عنها غير موجودة.",
+      "page.error.cta": "العودة إلى SILA",
+
       "alt.hero": "SILA — أناقة نسائية عصرية",
       "alt.editorial": "إطلالة نسائية أنيقة بالأبيض والأسود",
       "alt.about": "بوتيك SILA للأزياء النسائية",
-      "alt.cta": "SILA للأناقة النسائية"
+      "alt.cta": "SILA للأناقة النسائية",
+      "alt.explore.collections": "تشكيلات SILA من الأزياء النسائية",
+      "alt.explore.dresses": "فستان نسائي أنيق من تشكيلة SILA",
+      "alt.explore.wc": "ملابس نسائية عصرية من SILA",
+      "alt.explore.scarves": "شال نسائي من SILA",
+      "alt.explore.new": "المجموعة الجديدة من SILA للموسم"
     },
 
     en: {
-      "meta.title": "SILA | Women's Fashion & Elegant Style",
-      "meta.desc": "Discover SILA women's fashion — elegant, modern pieces designed to reflect your unique style.",
+      "meta.title": "SILA | Modern Women's Fashion & Clothing in Egypt",
+      "meta.desc": "Discover SILA women's fashion in Egypt, featuring elegant dresses, outfits, scarves and carefully selected styles for every look.",
 
       "common.theme": "Toggle theme", "common.close": "Close", "common.instagram": "Instagram",
+      "common.viewCollection": "View Collection", "common.viewAll": "View All", "common.backHome": "Back to SILA",
 
       "nav.home": "Home", "nav.about": "About", "nav.reviews": "Reviews", "nav.contact": "Contact",
+      "nav.collections": "Collections", "nav.faq": "FAQ",
 
       "announce.phrase": "Discover the New SILA Collection ✨",
 
@@ -204,7 +342,7 @@
       "cta.contact": "Contact SILA", "cta.follow": "Follow on Instagram",
 
       "footer.desc": "Because your style deserves to be different.",
-      "footer.linksTitle": "Quick Links", "footer.contactTitle": "Get In Touch",
+      "footer.linksTitle": "Quick Links", "footer.categoriesTitle": "Categories", "footer.contactTitle": "Get In Touch",
       "footer.devBy": "Developed by", "footer.devOf": "· affiliated with Technikos",
       "footer.devPhone": "Site design company phone:",
       "footer.instagram": "Message us on Instagram", "footer.facebook": "Facebook Page", "footer.tiktok": "TikTok", "footer.storePhone": "Store phone",
@@ -212,15 +350,131 @@
       "footer.rights": "© 2026 SILA. All Rights Reserved.",
       "footer.made": "Crafted with elegance ✦",
 
+      "explore.kicker": "Explore", "explore.title": "Explore SILA Collections",
+      "explore.desc": "From dresses to scarves and brand-new pieces — carefully curated collections for every look.",
+      "explore.card.collections": "All Collections",
+      "explore.card.collectionsDesc": "Browse every SILA category in one place.",
+      "explore.card.dresses": "Dresses",
+      "explore.card.dressesDesc": "Elegant dresses for daily looks and special occasions.",
+      "explore.card.wc": "Women's Clothing",
+      "explore.card.wcDesc": "Modern women's clothing and outfits for every season.",
+      "explore.card.scarves": "Scarves & Hijab",
+      "explore.card.scarvesDesc": "Shawls and hijab pieces chosen with care.",
+      "explore.card.new": "New Collection",
+      "explore.card.newDesc": "Discover the newest season's looks first.",
+
+      "crumb.home": "Home",
+
+      "related.title": "Related Collections",
+      "page.cta.title": "Need help choosing?",
+      "page.cta.desc": "Contact SILA on WhatsApp or Instagram and we'll help you find the perfect piece.",
+
+      "page.collections.title": "SILA Collections | Women's Fashion in Egypt",
+      "page.collections.desc": "Explore SILA's women's fashion collections — dresses, women's clothing, scarves and new season looks, carefully curated.",
+      "page.collections.h1": "Explore SILA Collections",
+      "page.collections.lead": "Every SILA collection is curated around one idea: helping you find elegant, modern women's fashion that feels like you.",
+      "page.collections.p1": "Since its launch, SILA has offered women's fashion collections that combine modern elegance and quality fabrics, so every piece is a real addition to your look.",
+      "page.collections.p2": "Browse the categories below to reach dresses, women's clothing, scarves and the new collection, and feel free to contact us with any question.",
+
+      "page.dresses.title": "Women's Dresses in Egypt | SILA",
+      "page.dresses.desc": "Discover SILA's women's dresses — elegant, modern styles for daily looks and special occasions.",
+      "page.dresses.h1": "Women's Dresses",
+      "page.dresses.lead": "The SILA dress collection is designed to give you an elegant look that combines comfort and beauty.",
+      "page.dresses.p1": "Style your dress with scarves and accessories from SILA for a complete look for any occasion.",
+      "page.dresses.p2": "Every piece in the SILA collection is chosen with care to suit your taste and give you the confidence that shows in your look.",
+      "page.dresses.cap1": "Elegant women's dress from the SILA collection",
+      "page.dresses.cap2": "A modern dress look for special occasions",
+      "page.dresses.cap3": "A comfortable and elegant women's dress",
+      "page.dresses.cap4": "Style your dress with SILA scarves",
+
+      "page.wc.title": "Modern Women's Clothing in Egypt | SILA",
+      "page.wc.desc": "Discover SILA's modern women's clothing collection — elegant outfits and pieces carefully selected for every season.",
+      "page.wc.h1": "Modern Women's Clothing",
+      "page.wc.lead": "The SILA women's clothing collection combines practical pieces with elegant designs for everyday looks and special moments.",
+      "page.wc.p1": "From modern women's clothing to elegant outfits, SILA offers pieces that help you build a complete and stylish look.",
+      "page.wc.p2": "Follow our collections to discover the latest models and looks, and contact us for any question about sizes or styling.",
+      "page.wc.cap1": "A modern women's look from SILA",
+      "page.wc.cap2": "Elegant women's outfits from the SILA collection",
+      "page.wc.cap3": "Modern women's clothing for your daily look",
+
+      "page.scarves.title": "Women's Scarves & Hijab | SILA",
+      "page.scarves.desc": "Discover SILA's women's scarves and hijab pieces, carefully selected for an elegant, complete look.",
+      "page.scarves.h1": "Women's Scarves & Hijab",
+      "page.scarves.lead": "Scarves and hijab pieces are part of SILA's identity, carefully chosen to suit different tastes and looks.",
+      "page.scarves.p1": "We offer women's scarves in designs and colors that add an elegant touch to your daily look and special occasions.",
+      "page.scarves.p2": "Discover our updated collection of scarves and hijab pieces, and contact us for more details and photos.",
+      "page.scarves.cap1": "Elegant women's scarf from SILA",
+      "page.scarves.cap2": "A refined women's hijab look",
+      "page.scarves.cap3": "Women's scarves with modern designs",
+
+      "page.newCollection.title": "New Collection | SILA",
+      "page.newCollection.desc": "Discover the newest SILA collection — new women's fashion pieces with modern designs that follow the season.",
+      "page.newCollection.h1": "SILA New Collection",
+      "page.newCollection.lead": "Every season we curate a new collection of modern pieces that give you a different, elegant look.",
+      "page.newCollection.p1": "The new collection reflects the spirit of the season — colors, cuts and designs that follow the latest women's fashion trends.",
+      "page.newCollection.p2": "Follow our social pages to see the new pieces first.",
+      "page.newCollection.cap1": "A new look from the SILA collection",
+      "page.newCollection.cap2": "Modern pieces from the new collection",
+      "page.newCollection.cap3": "The latest SILA models for the season",
+
+      "page.about.title": "About SILA | Women's Fashion Brand",
+      "page.about.desc": "Learn the SILA story — a women's fashion brand offering modern, elegant clothing carefully selected in Egypt.",
+      "page.about.h1": "About SILA",
+      "page.about.lead": "SILA is a women's fashion brand born from a passion for elegance, offering modern clothing carefully selected for every woman.",
+      "page.about.p1": "We believe elegance is not just what you wear — it's how you feel. That's why we choose every piece with care so it gives you a refined look that feels like you.",
+      "page.about.p2": "We care about your experience from the very first message — from helping you choose the right size to receiving the piece you selected.",
+      "page.about.p3": "Follow us on Instagram, Facebook and TikTok to discover our latest collections and looks.",
+
+      "page.contact.title": "Contact SILA | Women's Fashion in Egypt",
+      "page.contact.desc": "Contact SILA via WhatsApp, Instagram, Facebook or TikTok — we'd love to help.",
+      "page.contact.h1": "Contact SILA",
+      "page.contact.lead": "We'd love to hear from you — send us your orders or questions through any of the channels below and we'll get back to you soon.",
+      "page.contact.phoneTitle": "Phone & WhatsApp",
+      "page.contact.socialTitle": "Follow & Message",
+      "page.contact.hoursTitle": "Availability",
+      "page.contact.hoursValue": "Available daily · 10 AM – 11 PM (Egypt time)",
+      "page.contact.storePhone": "Store phone:",
+      "page.contact.instagram": "Instagram", "page.contact.facebook": "Facebook", "page.contact.tiktok": "TikTok",
+      "page.contact.orderNote": "Send us your order or question directly on WhatsApp and we'll share all the details and photos.",
+      "page.contact.socialNote": "Follow us on social media to see the newest pieces and looks first.",
+
+      "page.faq.title": "FAQ | SILA",
+      "page.faq.desc": "Answers to common questions about SILA — types of women's clothing, contact, ordering and following collections.",
+      "page.faq.h1": "Frequently Asked Questions",
+      "page.faq.lead": "We've gathered answers to the most common questions about SILA. If you can't find your answer, contact us and we'll be happy to help.",
+
+      "faq.q1": "What types of women's clothing does SILA offer?",
+      "faq.a1": "SILA offers a curated selection of women's fashion — dresses, women's clothing and outfits, scarves and hijab pieces, plus a new collection every season.",
+      "faq.q2": "Does SILA offer modern women's clothing?",
+      "faq.a2": "Yes, SILA collections focus on modern and elegant women's clothing, keeping up with the latest trends in fashion.",
+      "faq.q3": "How can I contact SILA?",
+      "faq.a3": "You can reach us on WhatsApp at 010 23681114, or via Instagram, Facebook and TikTok messages.",
+      "faq.q4": "Where can I follow the latest SILA collections?",
+      "faq.a4": "Follow our Instagram @sila_scarf.96, our Facebook page and our TikTok @sill_womens_fashion to see the newest pieces and looks first.",
+      "faq.q5": "Does SILA have a physical store?",
+      "faq.a5": "SILA is currently an online women's fashion brand — you can order directly on WhatsApp. Any physical store will be announced here as soon as it's available.",
+      "faq.q6": "Can I order a specific size?",
+      "faq.a6": "Yes — when you contact us on WhatsApp, tell us the size you need and we'll confirm availability before ordering to make sure it's the right fit for you.",
+
+      "page.error.title": "Page Not Found | SILA",
+      "page.error.desc": "Sorry, we couldn't find that page.",
+      "page.error.h1": "Sorry, we couldn't find that page.",
+      "page.error.cta": "Back to SILA",
+
       "alt.hero": "SILA — elegant women's fashion editorial",
       "alt.editorial": "Black and white women's fashion editorial",
       "alt.about": "SILA women's fashion boutique",
-      "alt.cta": "SILA women's elegance"
+      "alt.cta": "SILA women's elegance",
+      "alt.explore.collections": "SILA women's fashion collections",
+      "alt.explore.dresses": "Elegant women's dress from the SILA collection",
+      "alt.explore.wc": "Modern women's clothing from SILA",
+      "alt.explore.scarves": "Women's scarf from SILA",
+      "alt.explore.new": "New SILA collection for the season"
     }
   };
 
   /* ------------------------------------------------------------
-     6. STATE
+     7. STATE
      ------------------------------------------------------------ */
   const LS = { theme: "sila-theme", lang: "sila-lang" };
 
@@ -237,30 +491,38 @@
   let reviewSwiper = null;
 
   /* ------------------------------------------------------------
-     7. HELPERS
+     8. HELPERS
      ------------------------------------------------------------ */
   function starSvg(size) {
     return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L21.8 9.3l-5 4.6 1.3 6.9L12 17.8 5.9 20.8l1.3-6.9-5-4.6 6.9-1.04z"/></svg>`;
   }
 
-  /* ------------------------------------------------------------
-     8. RENDER — static images
-     ------------------------------------------------------------ */
-  function setStaticImages() {
-    $("#heroImg").src = images.hero;
-    $("#editorialImg").src = images.editorial;
-    $("#aboutImg").src = images.about;
-    $("#ctaImg").src = images.cta;
-    $("#heroImg").alt = t("alt.hero");
-    $("#editorialImg").alt = t("alt.editorial");
-    $("#aboutImg").alt = t("alt.about");
+  function on(sel, evt, fn) {
+    const el = $(sel);
+    if (el) el.addEventListener(evt, fn);
+    return el;
   }
 
   /* ------------------------------------------------------------
-     9. RENDER — reviews
+     9. RENDER — static images (homepage sections)
+     ------------------------------------------------------------ */
+  function setStaticImages() {
+    const hero = $("#heroImg");
+    if (hero) { hero.src = images.hero; hero.alt = t("alt.hero"); }
+    const ed = $("#editorialImg");
+    if (ed) { ed.src = images.editorial; ed.alt = t("alt.editorial"); }
+    const ab = $("#aboutImg");
+    if (ab) { ab.src = images.about; ab.alt = t("alt.about"); }
+    const cta = $("#ctaImg");
+    if (cta) { cta.src = images.cta; cta.alt = t("alt.cta"); }
+  }
+
+  /* ------------------------------------------------------------
+     10. RENDER — reviews
      ------------------------------------------------------------ */
   function renderReviews() {
     const grid = $("#reviewsGrid");
+    if (!grid) return;
     grid.innerHTML = reviews.map((r, i) => {
       const name = isAr() ? r.nameAr : r.nameEn;
       return `
@@ -281,10 +543,11 @@
   }
 
   /* ------------------------------------------------------------
-     10. RENDER — gallery
+     11. RENDER — gallery
      ------------------------------------------------------------ */
   function renderGallery() {
     const grid = $("#galleryGrid");
+    if (!grid) return;
     const igIcon = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>`;
     grid.innerHTML = galleryItems.map((g, i) => `
       <a class="g-item" href="${SOCIAL.instagram}" target="_blank" rel="noopener noreferrer" aria-label="${isAr() ? "إطلالة SILA على انستجرام " + (i + 1) : "SILA look on Instagram " + (i + 1)}" data-reveal style="--rd:${i % 4}">
@@ -294,10 +557,11 @@
   }
 
   /* ------------------------------------------------------------
-     11. ANNOUNCEMENT MARQUEE
+     12. ANNOUNCEMENT MARQUEE
      ------------------------------------------------------------ */
   function renderAnnouncement() {
     const track = $("#announceTrack");
+    if (!track) return;
     const phrase = t("announce.phrase");
     const sep = `<span class="marquee-sep" aria-hidden="true">✦</span>`;
     const seg = (`<span>${phrase}</span>${sep}`).repeat(4);
@@ -308,7 +572,7 @@
   }
 
   /* ------------------------------------------------------------
-     12. I18N APPLY
+     13. I18N APPLY
      ------------------------------------------------------------ */
   function applyI18n() {
     html.lang = state.lang;
@@ -318,19 +582,24 @@
     $$("[data-i18n-raw]").forEach(el => { el.innerHTML = t(el.getAttribute("data-i18n-raw")); });
     $$("[data-i18n-aria]").forEach(el => { el.setAttribute("aria-label", t(el.getAttribute("data-i18n-aria"))); });
     $$("[data-i18n-ph]").forEach(el => { el.setAttribute("placeholder", t(el.getAttribute("data-i18n-ph"))); });
+    $$("[data-i18n-alt]").forEach(el => { el.setAttribute("alt", t(el.getAttribute("data-i18n-alt"))); });
     $$("[data-marquee]").forEach(el => { el.textContent = t("marquee." + el.getAttribute("data-marquee")); });
 
     // Language button shows the OTHER language
-    $("#langBtnText").textContent = isAr() ? "EN" : "AR";
-    $("#mmLangText").textContent = isAr() ? "EN" : "AR";
+    const langBtn = $("#langBtnText");
+    if (langBtn) langBtn.textContent = isAr() ? "EN" : "AR";
+    const mmLang = $("#mmLangText");
+    if (mmLang) mmLang.textContent = isAr() ? "EN" : "AR";
 
-    // Meta
-    document.title = t("meta.title");
-    setMeta("description", t("meta.desc"));
-    setMeta("og:title", t("meta.title"));
-    setMeta("og:description", t("meta.desc"));
-    setMeta("twitter:title", t("meta.title"));
-    setMeta("twitter:description", t("meta.desc"));
+    // Per-page meta (title, description, OG, Twitter, locale)
+    const page = html.getAttribute("data-page") || "home";
+    const meta = PAGE_META[page] || PAGE_META.home;
+    document.title = t(meta.title);
+    setMeta("description", t(meta.desc));
+    setMeta("og:title", t(meta.title));
+    setMeta("og:description", t(meta.desc));
+    setMeta("twitter:title", t(meta.title));
+    setMeta("twitter:description", t(meta.desc));
     setMeta("og:locale", isAr() ? "ar_EG" : "en_US");
 
     // Dynamic content
@@ -338,6 +607,10 @@
     renderAnnouncement();
     renderReviews();
     renderGallery();
+
+    // Structured data that follows the visible language
+    emitBreadcrumbSchema();
+    emitFaqSchema();
   }
 
   function setMeta(name, content) {
@@ -347,7 +620,55 @@
   }
 
   /* ------------------------------------------------------------
-     13. THEME
+     13b. STRUCTURED DATA emitters (language-aware)
+     ------------------------------------------------------------ */
+  function getOrCreateJsonLd(id) {
+    let s = document.getElementById(id);
+    if (!s) {
+      s = document.createElement("script");
+      s.type = "application/ld+json";
+      s.id = id;
+      document.head.appendChild(s);
+    }
+    return s;
+  }
+
+  function emitBreadcrumbSchema() {
+    const container = $("#crumbs");
+    if (!container) return;
+    const nodes = container.querySelectorAll("a, [aria-current='page']");
+    if (!nodes.length) return;
+    let items = [];
+    nodes.forEach((el, i) => {
+      const name = el.textContent.trim();
+      if (!name) return;
+      if (el.tagName === "A") {
+        items.push({ "@type": "ListItem", position: i + 1, name, item: new URL(el.getAttribute("href"), document.baseURI).href });
+      } else {
+        items.push({ "@type": "ListItem", position: i + 1, name, item: document.baseURI });
+      }
+    });
+    if (!items.length) return;
+    const script = getOrCreateJsonLd("ld-breadcrumb");
+    script.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items });
+  }
+
+  function emitFaqSchema() {
+    if ((html.getAttribute("data-page") || "") !== "faq") return;
+    const qas = [];
+    for (let n = 1; n <= 6; n++) {
+      const q = t("faq.q" + n);
+      const a = t("faq.a" + n);
+      if (q.indexOf("faq.q") === 0) continue;
+      qas.push({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } });
+    }
+    if (!qas.length) return;
+    const script = getOrCreateJsonLd("ld-faq");
+    script.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: qas });
+  }
+
+  /* ------------------------------------------------------------
+     14. THEME
      ------------------------------------------------------------ */
   function applyTheme() {
     html.setAttribute("data-theme", state.theme);
@@ -361,7 +682,7 @@
   }
 
   /* ------------------------------------------------------------
-     14. LANGUAGE
+     15. LANGUAGE
      ------------------------------------------------------------ */
   function setLang(lang) {
     if (reviewSwiper) { reviewSwiper.destroy(true, true); reviewSwiper = null; }
@@ -376,7 +697,7 @@
   }
 
   /* ------------------------------------------------------------
-     15. SWIPER CAROUSELS
+     16. SWIPER CAROUSELS
      ------------------------------------------------------------ */
   function initReviewSwiper() {
     const el = $(".reviews-swiper");
@@ -404,7 +725,7 @@
   }
 
   /* ------------------------------------------------------------
-     16. REVEAL OBSERVER
+     17. REVEAL OBSERVER
      ------------------------------------------------------------ */
   let revealObserver = null;
   function observeReveals() {
@@ -426,12 +747,55 @@
   }
 
   /* ------------------------------------------------------------
-     17. SCROLL SPY + NAVBAR
+     18. FAQ ACCORDION (faq page only)
      ------------------------------------------------------------ */
+  function initFaq() {
+    const items = $$(".faq-item");
+    if (!items.length) return;
+    items.forEach(item => {
+      const btn = item.querySelector(".faq-q");
+      const ans = item.querySelector(".faq-a");
+      if (!btn || !ans) return;
+      ans.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", () => {
+        const isOpen = item.classList.contains("open");
+        items.forEach(i => {
+          i.classList.remove("open");
+          const a = i.querySelector(".faq-a");
+          const b = i.querySelector(".faq-q");
+          if (a) a.hidden = true;
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+        if (!isOpen) {
+          item.classList.add("open");
+          ans.hidden = false;
+          btn.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------
+     19. SCROLL SPY + NAVBAR + ACTIVE NAV
+     ------------------------------------------------------------ */
+  function markActiveNav() {
+    const page = html.getAttribute("data-page") || "home";
+    $$(".nav-link, .mm-link").forEach(a => {
+      const nav = a.getAttribute("data-nav");
+      if (nav) a.classList.toggle("active", nav === page);
+    });
+  }
+
   function onScroll() {
     const nav = $("#navbar");
-    nav.classList.toggle("scrolled", window.scrollY > 12);
-    $("#toTop").classList.toggle("visible", window.scrollY > 650);
+    if (nav) nav.classList.toggle("scrolled", window.scrollY > 12);
+    const toTop = $("#toTop");
+    if (toTop) toTop.classList.toggle("visible", window.scrollY > 650);
+
+    // Section scroll-spy only applies on the homepage (has #home/#about/#reviews).
+    const homeSec = document.getElementById("home");
+    if (!homeSec) return;
 
     const sections = ["home", "about", "reviews"];
     const pos = window.scrollY + window.innerHeight * 0.35;
@@ -445,7 +809,7 @@
   }
 
   /* ------------------------------------------------------------
-     18. MOBILE MENU
+     20. MOBILE MENU
      ------------------------------------------------------------ */
   function openMenu() {
     $("#mobileMenu").classList.add("open");
@@ -467,27 +831,31 @@
   }
 
   /* ------------------------------------------------------------
-     19. EVENTS
+     21. EVENTS
      ------------------------------------------------------------ */
   function bindEvents() {
     // Theme + language (both navbar & mobile menu)
-    $("#themeBtn").addEventListener("click", toggleTheme);
-    $("#mmThemeBtn").addEventListener("click", toggleTheme);
-    $("#langBtn").addEventListener("click", toggleLang);
-    $("#mmLangBtn").addEventListener("click", toggleLang);
+    on("#themeBtn", "click", toggleTheme);
+    on("#mmThemeBtn", "click", toggleTheme);
+    on("#langBtn", "click", toggleLang);
+    on("#mmLangBtn", "click", toggleLang);
 
     // Mobile menu
-    $("#hamburger").addEventListener("click", () => {
-      $("#mobileMenu").classList.contains("open") ? closeMenu() : openMenu();
+    on("#hamburger", "click", () => {
+      const menu = $("#mobileMenu");
+      if (menu && menu.classList.contains("open")) closeMenu();
+      else openMenu();
     });
-    $("#menuClose").addEventListener("click", closeMenu);
-    $("#menuOverlay").addEventListener("click", closeMenu);
+    on("#menuClose", "click", closeMenu);
+    on("#menuOverlay", "click", closeMenu);
     $$(".mm-link").forEach(a => a.addEventListener("click", closeMenu));
-    $$("#mobileMenu a").forEach(a => a.addEventListener("click", () => { if (a.getAttribute("href", "").startsWith("#")) closeMenu(); }));
+    $$("#mobileMenu a").forEach(a => a.addEventListener("click", () => {
+      if ((a.getAttribute("href") || "").startsWith("#")) closeMenu();
+    }));
 
     // Scroll
     window.addEventListener("scroll", onScroll, { passive: true });
-    $("#toTop").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    on("#toTop", "click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
     // ESC closes overlays
     document.addEventListener("keydown", e => {
@@ -497,7 +865,7 @@
   }
 
   /* ------------------------------------------------------------
-     20. LOADER
+     22. LOADER
      ------------------------------------------------------------ */
   function hideLoader() {
     const loader = $("#loader");
@@ -507,7 +875,7 @@
   }
 
   /* ------------------------------------------------------------
-     21. BOOT
+     23. BOOT
      ------------------------------------------------------------ */
   function init() {
     // Theme from localStorage or OS preference
@@ -527,7 +895,9 @@
     applyTheme();
     applyI18n();
     initCarousels();
+    initFaq();
     bindEvents();
+    markActiveNav();
     onScroll();
 
     // Hide loader once everything is painted (fast), fallback timer

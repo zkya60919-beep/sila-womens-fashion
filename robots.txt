@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# SILA — https://sila-fashion.com
+# CSS, JS and images are NOT blocked so Google can render and index the site fully.
+
+Sitemap: https://sila-fashion.com/sitemap.xml
