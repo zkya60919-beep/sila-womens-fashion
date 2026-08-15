@@ -25,8 +25,8 @@ sila-website
 ├── style.css               # Full design system (tokens, themes, RTL, responsive)
 ├── pages.css               # Subpage layouts (breadcrumbs, category grids, contact, FAQ, 404)
 ├── script.js               # i18n, theme, page metadata, schema, reviews carousel, gallery, UI
-├── robots.txt              # Search-engine crawl rules (sila-fashion.com)
-├── sitemap.xml             # XML sitemap (sila-fashion.com URLs)
+├── robots.txt              # Search-engine crawl rules (sila-womens-fashion.vercel.app)
+├── sitemap.xml             # XML sitemap (sila-womens-fashion.vercel.app URLs)
 ├── README.md
 ├── collections/            # Collections hub
 │   └── index.html
@@ -72,8 +72,8 @@ All social links are the **exact links provided by the client** and open in a ne
 This site is already set up for white-hat SEO (multi-page, one H1 per page, unique metadata,
 breadcrumb/FAQ/Organization schema, `robots.txt`, `sitemap.xml`). Before going live:
 
-1. **Domain** — the code uses `https://sila-fashion.com/` in canonicals, OG/Twitter URLs,
-   `robots.txt` and `sitemap.xml`. If the real domain differs, replace it everywhere.
+1. **Domain** — the code uses `https://sila-womens-fashion.vercel.app/` in canonicals, OG/Twitter URLs,
+   `robots.txt` and `sitemap.xml`. If a real domain is added later, replace it everywhere.
 2. **Search Console** — verify your domain in [Google Search Console](https://search.google.com/search-console).
    Add the site and submit `sitemap.xml`. If you need HTML file or DNS verification, place the
    verification meta tag / file here.

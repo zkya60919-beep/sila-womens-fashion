@@ -1,7 +1,7 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-# SILA — https://sila-fashion.com
+# SILA — https://sila-womens-fashion.vercel.app
 # CSS, JS and images are NOT blocked so Google can render and index the site fully.
 
-Sitemap: https://sila-fashion.com/sitemap.xml
+Sitemap: https://sila-womens-fashion.vercel.app/sitemap.xml
