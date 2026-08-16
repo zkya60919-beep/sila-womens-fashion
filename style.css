@@ -26,6 +26,10 @@
   --accent-strong: var(--pink-dark);
   --accent-glow: rgba(217, 143, 163, 0.28);
   --hero-mask: linear-gradient(180deg, rgba(255,249,250,0) 0%, rgba(255,249,250,1) 100%);
+  --hero-overlay-a: rgba(255, 249, 250, 0.96);
+  --hero-overlay-b: rgba(255, 249, 250, 0.86);
+  --hero-overlay-c: rgba(255, 249, 250, 0.50);
+  --hero-overlay-d: rgba(255, 249, 250, 0.12);
 
   --shadow-sm: 0 6px 18px rgba(43, 32, 35, 0.06);
   --shadow-md: 0 16px 40px rgba(43, 32, 35, 0.10);
@@ -63,6 +67,10 @@ html[lang="ar"] {
   --accent-strong: #E4AABC;
   --accent-glow: rgba(217, 143, 163, 0.22);
   --hero-mask: linear-gradient(180deg, rgba(11,11,11,0) 0%, rgba(11,11,11,1) 100%);
+  --hero-overlay-a: rgba(11, 11, 11, 0.96);
+  --hero-overlay-b: rgba(11, 11, 11, 0.86);
+  --hero-overlay-c: rgba(11, 11, 11, 0.52);
+  --hero-overlay-d: rgba(11, 11, 11, 0.14);
 
   --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.35);
   --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.45);
@@ -372,7 +380,36 @@ html[dir="rtl"] .mm-link::after { content: "←"; }
 /* ============================================================
    HERO
    ============================================================ */
-.hero { position: relative; padding-block: clamp(3rem, 6vw, 5rem) clamp(5rem, 10vw, 8rem); overflow: hidden; }
+.hero {
+  position: relative;
+  padding-block: clamp(3rem, 6vw, 5rem) clamp(5rem, 10vw, 8rem);
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--bg);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("assets/images/store-hero.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to right,
+    var(--hero-overlay-a) 0%,
+    var(--hero-overlay-b) 42%,
+    var(--hero-overlay-c) 68%,
+    var(--hero-overlay-d) 100%
+  );
+}
 
 .hero-inner { display: grid; grid-template-columns: 1.02fr 0.98fr; align-items: center; gap: clamp(28px, 5vw, 72px); }
 
@@ -401,7 +438,7 @@ html[dir="rtl"] .mm-link::after { content: "←"; }
   border-inline-start: 1px solid var(--border);
 }
 
-.hero-media { position: relative; }
+.hero-media { position: relative; z-index: 2; }
 .hero-blob {
   position: absolute; inset-block: -6%; inset-inline: -4%;
   background: radial-gradient(closest-side, var(--accent-glow), transparent 70%);
@@ -911,6 +948,16 @@ body.no-scroll { overflow: hidden; }
   .hero-media { max-width: 520px; margin-inline: auto; width: 100%; }
   .new-chip { inset-inline-start: -8px; }
   .rating-card { inset-inline-end: -6px; }
+  .hero::after,
+  html[lang="ar"] .hero::after {
+    background: linear-gradient(
+      to bottom,
+      var(--hero-overlay-a) 0%,
+      var(--hero-overlay-b) 38%,
+      var(--hero-overlay-c) 62%,
+      var(--hero-overlay-d) 100%
+    );
+  }
   .editorial-inner { grid-template-columns: 1fr; gap: 40px; }
   .editorial-text { text-align: center; }
   .editorial-desc { margin-inline: auto; }
@@ -960,6 +1007,17 @@ body.no-scroll { overflow: hidden; }
 /* RTL refinements */
 [dir="rtl"] .brand-quote-owner { letter-spacing: 0.12em; }
 [dir="rtl"] .btn { letter-spacing: 0; }
+
+/* Hero background — mirror the overlay for RTL */
+html[lang="ar"] .hero::after {
+  background: linear-gradient(
+    to left,
+    var(--hero-overlay-a) 0%,
+    var(--hero-overlay-b) 42%,
+    var(--hero-overlay-c) 68%,
+    var(--hero-overlay-d) 100%
+  );
+}
 
 /* Dark theme fine-tuning */
 [data-theme="dark"] .hero-frame { box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--border); }
