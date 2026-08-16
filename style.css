@@ -1032,6 +1032,31 @@ html[lang="ar"] .hero-title .accent { font-style: normal; }
   .explore-featured { grid-column: span 1; }
 }
 
+/* ============================================================
+   SEO CONTENT SECTION
+   ============================================================ */
+.seo-content { padding: 4rem 0 2rem; }
+.seo-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: var(--c-text);
+}
+.seo-text {
+  columns: 2;
+  column-gap: 2.5rem;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--c-muted);
+}
+.seo-text p { margin-bottom: 1rem; break-inside: avoid; }
+.seo-text a { color: var(--c-accent); text-decoration: underline; }
+@media (max-width: 768px) {
+  .seo-text { columns: 1; }
+  .seo-content { padding: 2.5rem 0 1rem; }
+}
+
 /* No-JS fallback: never hide reveal-only content */
 html:not(.js) [data-reveal] { opacity: 1; transform: none; }
 

@@ -285,7 +285,47 @@
       "alt.explore.dresses": "فستان نسائي أنيق من تشكيلة SILA",
       "alt.explore.wc": "ملابس نسائية عصرية من SILA",
       "alt.explore.scarves": "شال نسائي من SILA",
-      "alt.explore.new": "المجموعة الجديدة من SILA للموسم"
+      "alt.explore.new": "المجموعة الجديدة من SILA للموسم",
+
+      "seo.collections.title": "اكتشفي تشكيلات SILA للأزياء والملابس النسائية في مصر",
+      "seo.collections.p1": "تقدم SILA أفضل ما في الأزياء النسائية في مصر، مع تشكيلات منسّقة بعناية تتراوح من الفساتين الأنيقة إلى الملابس النسائية العصرية والشالات وأحدث الإصدارات الموسمية. كل تشكيلة صُممت لمساعدتك على التعبير عن أسلوبك الشخصي بثقة ورقية.",
+      "seo.collections.p2": "سواء كنت تبحثين عن فستان مميز لمناسبة خاصة، أو ملابس يومية متعددة الاستخدام، أو الشال المثالي لإكمال إطلالتك، فإن SILA يضم ما يناسب كل لحظة. يختار فريقنا كل قطعة لجودة قماشها وقصتها المميزة وأناقتها العصرية.",
+      "seo.collections.p3": "تصفحي مجموعتنا الكاملة من التشكيلات للعثور على إطلالتك المفضلة القادمة. من <a href=\"../dresses/\">فساتيننا</a> المميزة إلى <a href=\"../scarves/\">شالاتنا وقطع الحجاب</a> الراقية، كل تشكيلة من SILA مصممة للمرأة المصرية العصرية. تابعي إصدارات <a href=\"../new-collection/\">المجموعة الجديدة</a> عبر انستجرام وواتساب.",
+
+      "seo.dresses.title": "تشكيلة فساتين SILA النسائية في مصر",
+      "seo.dresses.p1": "تشكيلة فساتين SILA النسائية هي جوهر علامتنا التجارية، وتقدم تصاميم أنيقة تجمع بين الأناقة العصرية والراحة. من الفساتين الطويلة المتدفقة إلى القصات المتوسطة المفصلة، كل قطعة مختارة لتبرز جمال المرأة في مختلف المناسبات في مصر.",
+      "seo.dresses.p2": "تصنع فساتيننا من أقمشة فاخرة مختارة لنعومتها ومتانتها، مما يضمن شعورك بالجمال كما تبدين. سواء كنت تبحثين عن إطلالة أنيقة لحفل زفاف، أو فستان أنيق لليوم، أو إطلالة محتشمة للمساء، تشكيلة فساتين SILA تغطي جميع احتياجاتك.",
+      "seo.dresses.p3": "نسقي فستانك المفضل مع <a href=\"../scarves/\">شال SILA</a> لإطلالة متكاملة وأنيقة. تصفحي <a href=\"../collections/\">تشكيلاتنا</a> الكاملة أو زوري <a href=\"../new-collection/\">المجموعة الجديدة</a> لاكتشاف أحدث الإضافات لنطاق فساتيننا.",
+
+      "seo.wc.title": "ملابس وأطقم SILA النسائية في مصر",
+      "seo.wc.p1": "تشكيلة الملابس النسائية من SILA مصممة للمرأة المصرية العصرية التي تقدر الأناقة والراحة معًا. تتضمن مجموعتنا قمصانًا أنيقة وأطقمًا منسقة وبنطلونات أنيقة وقطع طبقات متعددة الاستخدام يمكنك خلطها ومطابقتها لإنشاء إطلالتك المثالية.",
+      "seo.wc.p2": "كل قطعة في خط الملابس النسائية لدينا مختارة بعناية لجودة مادتها وتصميمها المعاصر وقصتها المميزة. سواء كنت تستعدين للعمل أو مناسبة عادية أو تجمع خاص، تقدم SILA ملابس تتحرك مع نمط حياتك.",
+      "seo.wc.p3": "أكملي إطلالتك مع <a href=\"../scarves/\">شال SILA</a> أو استرشدي بـ <a href=\"../dresses/\">فساتيننا</a> لمزيد من الإلهام. تصفعي <a href=\"../new-collection/\">المجموعة الجديدة</a> بانتظام لأحدث القطع الموسمية.",
+
+      "seo.scarves.title": "تشكيلة شالات وحجاب SILA النسائية",
+      "seo.scarves.p1": "الشالات وقطع الحجاب هي جوهر هوية SILA. تتميز مجموعتنا بتصاميم أنيقة بألوان وأقمشة متنوعة، من الشالات الفاخرة بملمس الحرير إلى قطع الحجاب الناعمة المريحة التي تنساب بجمال في ارتداء اليومية.",
+      "seo.scarves.p2": "كل شال من SILA مختار ليتناسب مع تشكيلاتنا الأوسع من الأزياء، مما يسهّل التنسيق مع <a href=\"../dresses/\">فساتيننا</a> و<a href=\"../womens-clothing/\">ملابسنا النسائية</a>. سواء فضلتِ الألوان المحايدة أو الألوان الجريئة، تضيف شالاتنا لمسة راقية إلى أي إطلالة.",
+      "seo.scarves.p3": "اكتشفي أحدث إضافاتنا لنطاق الشالات والحجاب في <a href=\"../new-collection/\">المجموعة الجديدة</a>. للحصول على نصائح عن التنسيق أو لرؤية الألوان والتصاميم المتاحة، تواصلي مع SILA عبر واتساب أو تابعينا على انستجرام للحصول على إلهام يومي.",
+
+      "seo.new.title": "مجموعة SILA الجديدة للموسم 2026",
+      "seo.new.p1": "مجموعة SILA الجديدة لعام 2026 تجلب طاقة جديدة إلى الأزياء النسائية في مصر. في كل موسم، يختار فريقنا مجموعة مختارة من أحدث الاتجاهات، من الألوان والقصات العصرية إلى القطع المتعددة الاستخدام التي تجدّد خزانتك بالكامل.",
+      "seo.new.p2": "تتضمن إصداراتنا الجديدة نسخًا محدثة من <a href=\"../dresses/\">فساتيننا</a> الأكثر مبيعًا، و<a href=\"../womens-clothing/\">ملابس نسائية</a> معاصرة، و<a href=\"../scarves/\">شالات وقطع حجاب</a> مصنوعة بعناية. كل عنصر مختار لتلبي معايير SILA من الجودة والراحة والأناقة.",
+      "seo.new.p3": "كوني أول من يكتشف كل إصدار جديد بتتابعين SILA على انستجرام وتيك توك وفيسبوك. يمكنك أيضًا مراسلتنا على واتساب للاستفسار عن الإصدارات القادمة أو المقاسات المتاحة أو لطلب قطعة من المجموعة الجديدة.",
+
+      "seo.about.title": "قصة SILA — علامة أزياء نسائية في مصر",
+      "seo.about.p1": "تأسست SILA برؤية واضحة: تقديم أفضل الأزياء العصرية والأنيقة للمرأة المصرية. من <a href=\"../dresses/\">فساتيننا</a> المنسّقة بعناية إلى <a href=\"../scarves/\">شالاتنا</a> الراقية، تعكس كل قطعة التزامنا بالجودة والأسلوب.",
+      "seo.about.p2": "نؤمن أن الأناقة الحقيقية تكمن في التفاصيل — ملمس القماش الفاخر، ودقة القصّ المميز، والثقة التي تأتي من ارتداء شيء يناسبك تمامًا. لهذا السبب نختار كل عنصر في <a href=\"../collections/\">تشكيلاتنا</a> يدويًا، من الأasics الأساسية إلى أحدث إصداراتنا الموسمية.",
+      "seo.about.p3": "SILA ليست مجرد علامة تجارية للأزياء، إنها مجتمع من النساء اللواتي يقدّرن الجودة والأناقة والأسلوب الأصيل. زوري <a href=\"../contact/\">صفحة التواصل</a> أو تابعينا على وسائل التواصل الاجتماعي للانضمام إلى عائلة SILA.",
+
+      "seo.contact.title": "تواصلي مع SILA للأزياء النسائية",
+      "seo.contact.p1": "سواء كان لديك سؤال حول <a href=\"../dresses/\">فساتيننا</a> أو تحتاجين مساعدة في اختيار المقاس المناسب من نطاق <a href=\"../womens-clothing/\">ملابسنا النسائية</a> أو تريدين معرفة المزيد عن <a href=\"../scarves/\">شالاتنا وقطع الحجاب</a>، فريق SILA هنا لمساعدتك.",
+      "seo.contact.p2": "متاحون يوميًا من الساعة 10 صباحًا حتى 11 مساءً بتوقيت مصر عبر واتساب وانستجرام وفيسبوك وتيك توك. تواصلي معنا للحصول على نصائح أنيقة مخصصة أو الاستفسارات حول الطلبات أو إرشادات المقاسات أو أي أسئلة أخرى حول تشكيلاتنا.",
+      "seo.contact.p3": "رضاكِ أولويتنا. من لحظة أول تواصلكِ معنا إلى لحظة وصول طلبكِ، نلتزم بتوفير تجربة تسوق سلسة وممتعة. تصفعي <a href=\"../faq/\">صفحة الأسئلة الشائعة</a> للحصول على إجابات سريعة أو زوري <a href=\"../about/\">صفحة عن SILA</a> لمعرفة المزيد.",
+
+      "seo.faq.title": "كل ما تحتاجين معرفته عن SILA",
+      "seo.faq.p1": "SILA هي علامة أزياء نسائية مقرها مصر، وتقدم مجموعة متجددة باستمرار من الفساتين الأنيقة والملابس النسائية العصرية والشالات وقطع الحجاب. تُحدّث تشكيلاتنا كل موسم لتقدم لكِ أحدث الاتجاهات مع الحفاظ على الجودة والأناقة التي تحدد SILA.",
+      "seo.faq.p2": "التسوق مع SILA سهل — تصفعي <a href=\"../collections/\">تشكيلاتنا</a> واختاري القطع التي تحبينها وتواصلي معنا عبر واتساب لتأكيد طلبكِ. نقدم نصائح مقاس مخصصة وصورًا تفصيلية لمساعدتك على اتخاذ أفضل قرار من راحة منزلكِ.",
+      "seo.faq.p3": "هل لديك سؤال غير مغطى هنا؟ زوري <a href=\"../contact/\">صفحة التواصل</a> للتواصل معنا مباشرة. تابعي SILA على انستجرام وفيسبوك وتيك توك للحصول على إلهام أنيق يومي وأحدث الإصدارات ومحتوى حصري من الكواليس."
     },
 
     en: {
@@ -468,7 +508,47 @@
       "alt.explore.dresses": "Elegant women's dress from the SILA collection",
       "alt.explore.wc": "Modern women's clothing from SILA",
       "alt.explore.scarves": "Women's scarf from SILA",
-      "alt.explore.new": "New SILA collection for the season"
+      "alt.explore.new": "New SILA collection for the season",
+
+      "seo.collections.title": "Discover SILA Women's Fashion Collections in Egypt",
+      "seo.collections.p1": "SILA brings together the best of women's fashion in Egypt, offering carefully curated collections that range from elegant dresses to modern women's clothing, scarves and new season arrivals. Each collection is designed to help you express your personal style with confidence and grace.",
+      "seo.collections.p2": "Whether you are looking for a statement dress for a special occasion, versatile everyday clothing, or the perfect scarf to complete your outfit, SILA has something for every moment. Our team selects each piece for its quality fabric, flattering cut and timeless elegance.",
+      "seo.collections.p3": "Explore our full range of collections to find your next favorite look. From our signature <a href=\"../dresses/\">dresses</a> to our refined <a href=\"../scarves/\">scarves and hijab</a> pieces, every SILA collection is crafted with the modern Egyptian woman in mind. Stay updated with our <a href=\"../new-collection/\">new collection</a> releases by following us on Instagram and WhatsApp.",
+
+      "seo.dresses.title": "SILA Women's Dresses Collection in Egypt",
+      "seo.dresses.p1": "SILA's women's dresses collection is the heart of our brand, offering elegant designs that blend modern style with comfortable fits. From flowing maxi dresses to tailored midi styles, each piece is selected to flatter real women and real occasions across Egypt.",
+      "seo.dresses.p2": "Our dresses are crafted from premium fabrics chosen for their softness and durability, ensuring you feel as good as you look. Whether you need a graceful outfit for a wedding, a chic day dress, or a modest evening look, SILA's dress collection has you covered.",
+      "seo.dresses.p3": "Pair your favorite dress with a <a href=\"../scarves/\">SILA scarf</a> for a complete, polished look. Browse our full <a href=\"../collections/\">collections</a> or visit our <a href=\"../new-collection/\">new collection</a> to discover the latest additions to our dress range.",
+
+      "seo.wc.title": "SILA Women's Clothing & Outfits in Egypt",
+      "seo.wc.p1": "SILA's women's clothing collection is designed for the modern Egyptian woman who values both elegance and comfort. Our range includes stylish tops, coordinated sets, elegant pants, and versatile layering pieces that you can mix and match to create your perfect look.",
+      "seo.wc.p2": "Every piece in our women's clothing line is carefully selected for its quality material, contemporary design, and flattering silhouette. Whether you are dressing for the office, a casual outing, or a special gathering, SILA offers clothing that moves with your lifestyle.",
+      "seo.wc.p3": "Complete your outfit with a <a href=\"../scarves/\">SILA scarf</a> or explore our <a href=\"../dresses/\">dresses</a> for more inspiration. Check our <a href=\"../new-collection/\">new collection</a> regularly for the freshest seasonal pieces.",
+
+      "seo.scarves.title": "SILA Women's Scarves & Hijab Collection",
+      "seo.scarves.p1": "Scarves and hijab pieces are at the core of SILA's identity. Our collection features elegant designs in a variety of colors and fabrics, from luxurious silk-look scarves to soft, breathable hijab pieces that drape beautifully for everyday wear.",
+      "seo.scarves.p2": "Each SILA scarf is chosen to complement our broader fashion collections, making it easy to coordinate with our <a href=\"../dresses/\">dresses</a> and <a href=\"../womens-clothing/\">women's clothing</a>. Whether you prefer neutral tones or bold statement colors, our scarves add a refined finishing touch to any look.",
+      "seo.scarves.p3": "Discover the latest additions to our scarf and hijab range in the <a href=\"../new-collection/\">new collection</a>. For styling advice or to see the full range of available colors and patterns, contact SILA on WhatsApp or follow us on Instagram for daily inspiration.",
+
+      "seo.new.title": "SILA New Season Collection 2026",
+      "seo.new.p1": "The SILA new collection for 2026 brings fresh energy to women's fashion in Egypt. Each season, our team curates a selection of the latest trends, from on-trend colors and silhouettes to versatile pieces that refresh your entire wardrobe.",
+      "seo.new.p2": "Our new arrivals include updated versions of best-selling <a href=\"../dresses/\">dresses</a>, contemporary <a href=\"../womens-clothing/\">women's clothing</a>, and beautifully crafted <a href=\"../scarves/\">scarves and hijab</a> pieces. Every item is chosen to ensure it meets SILA's standards of quality, comfort and elegance.",
+      "seo.new.p3": "Be the first to discover each new drop by following SILA on Instagram, TikTok and Facebook. You can also message us on WhatsApp to ask about upcoming releases, available sizes, or to place an order from the latest collection.",
+
+      "seo.about.title": "The SILA Story — Women's Fashion Brand in Egypt",
+      "seo.about.p1": "SILA was founded with a clear vision: to offer women in Egypt access to elegant, modern fashion that feels personal and empowering. From our carefully curated <a href=\"../dresses/\">dresses</a> to our refined <a href=\"../scarves/\">scarves</a>, every piece reflects our commitment to quality and style.",
+      "seo.about.p2": "We believe that true elegance lies in the details — the feel of a premium fabric, the precision of a flattering cut, and the confidence that comes from wearing something that truly suits you. That is why we handpick every item in our <a href=\"../collections/\">collections</a>, from classic staples to our latest seasonal arrivals.",
+      "seo.about.p3": "SILA is more than a fashion brand; it is a community of women who appreciate quality, elegance and authentic style. Visit our <a href=\"../contact/\">contact page</a> or follow us on social media to become part of the SILA family.",
+
+      "seo.contact.title": "Get in Touch With SILA",
+      "seo.contact.p1": "Whether you have a question about our <a href=\"../dresses/\">dresses</a>, need help choosing the right size from our <a href=\"../womens-clothing/\">women's clothing</a> range, or want to know more about our latest <a href=\"../scarves/\">scarves and hijab</a> collection, the SILA team is here to help.",
+      "seo.contact.p2": "We are available daily from 10 AM to 11 PM Egypt time via WhatsApp, Instagram, Facebook and TikTok. Reach out to us for personalized styling advice, order inquiries, size guidance, or any other questions about our collections.",
+      "seo.contact.p3": "Your satisfaction is our priority. From the moment you first contact us to the moment your order arrives, we are committed to providing a seamless and pleasant shopping experience. Browse our <a href=\"../faq/\">FAQ page</a> for quick answers or visit our <a href=\"../about/\">about page</a> to learn more about SILA.",
+
+      "seo.faq.title": "Everything You Need to Know About SILA",
+      "seo.faq.p1": "SILA is a women's fashion brand based in Egypt, offering an ever-growing selection of elegant dresses, modern women's clothing, scarves and hijab pieces. Our collections are updated every season to bring you the latest trends while maintaining the quality and elegance that define SILA.",
+      "seo.faq.p2": "Shopping with SILA is simple — browse our <a href=\"../collections/\">collections</a>, choose the pieces you love, and contact us on WhatsApp to place your order. We offer personalized sizing advice and detailed photos to help you make the best choice from the comfort of your home.",
+      "seo.faq.p3": "Have a question that is not covered here? Visit our <a href=\"../contact/\">contact page</a> to reach us directly. Follow SILA on Instagram, Facebook and TikTok for daily style inspiration, new arrivals and exclusive behind-the-scenes content."
     }
   };
 
