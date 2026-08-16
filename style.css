@@ -26,10 +26,10 @@
   --accent-strong: var(--pink-dark);
   --accent-glow: rgba(217, 143, 163, 0.28);
   --hero-mask: linear-gradient(180deg, rgba(255,249,250,0) 0%, rgba(255,249,250,1) 100%);
-  --hero-overlay-a: rgba(255, 249, 250, 0.96);
-  --hero-overlay-b: rgba(255, 249, 250, 0.86);
-  --hero-overlay-c: rgba(255, 249, 250, 0.50);
-  --hero-overlay-d: rgba(255, 249, 250, 0.12);
+  --hero-overlay-a: rgba(255, 249, 250, 0.42);
+  --hero-overlay-b: rgba(255, 249, 250, 0.22);
+  --hero-overlay-c: rgba(255, 249, 250, 0.10);
+  --hero-overlay-d: rgba(255, 249, 250, 0.02);
 
   --shadow-sm: 0 6px 18px rgba(43, 32, 35, 0.06);
   --shadow-md: 0 16px 40px rgba(43, 32, 35, 0.10);
@@ -67,10 +67,10 @@ html[lang="ar"] {
   --accent-strong: #E4AABC;
   --accent-glow: rgba(217, 143, 163, 0.22);
   --hero-mask: linear-gradient(180deg, rgba(11,11,11,0) 0%, rgba(11,11,11,1) 100%);
-  --hero-overlay-a: rgba(11, 11, 11, 0.96);
-  --hero-overlay-b: rgba(11, 11, 11, 0.86);
-  --hero-overlay-c: rgba(11, 11, 11, 0.52);
-  --hero-overlay-d: rgba(11, 11, 11, 0.14);
+  --hero-overlay-a: rgba(11, 11, 11, 0.45);
+  --hero-overlay-b: rgba(11, 11, 11, 0.24);
+  --hero-overlay-c: rgba(11, 11, 11, 0.10);
+  --hero-overlay-d: rgba(11, 11, 11, 0.02);
 
   --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.35);
   --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.45);
@@ -414,6 +414,22 @@ html[dir="rtl"] .mm-link::after { content: "←"; }
 .hero-inner { display: grid; grid-template-columns: 1.02fr 0.98fr; align-items: center; gap: clamp(28px, 5vw, 72px); }
 
 .hero-content { position: relative; z-index: 2; }
+.hero-content .eyebrow,
+.hero-title,
+.hero-title .accent,
+.hero-desc,
+.hero-stats .stat strong,
+.hero-stats .stat span {
+  text-shadow: 0 1px 2px rgba(255, 249, 250, 0.9), 0 2px 14px rgba(255, 249, 250, 0.55);
+}
+[data-theme="dark"] .hero-content .eyebrow,
+[data-theme="dark"] .hero-title,
+[data-theme="dark"] .hero-title .accent,
+[data-theme="dark"] .hero-desc,
+[data-theme="dark"] .hero-stats .stat strong,
+[data-theme="dark"] .hero-stats .stat span {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85), 0 2px 16px rgba(0, 0, 0, 0.6);
+}
 .hero-title {
   font-size: clamp(2.7rem, 6.4vw, 4.9rem);
   font-weight: 600; line-height: 1.04;
@@ -435,7 +451,7 @@ html[dir="rtl"] .mm-link::after { content: "←"; }
 .stat span { font-size: 0.82rem; color: var(--text-2); }
 .stat + .stat {
   padding-inline-start: clamp(18px, 3vw, 42px);
-  border-inline-start: 1px solid var(--border);
+  border-inline-start: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
 }
 
 .hero-media { position: relative; z-index: 2; }
