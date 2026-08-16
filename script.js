@@ -11,7 +11,6 @@
         image rendered by JS. Replace any URL here to swap imagery.
      ------------------------------------------------------------ */
   const images = {
-    hero: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1400&q=80",
     editorial: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1100&q=80",
     about: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1100&q=80",
     cta: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80",
@@ -507,8 +506,6 @@
      9. RENDER — static images (homepage sections)
      ------------------------------------------------------------ */
   function setStaticImages() {
-    const hero = $("#heroImg");
-    if (hero) { hero.src = images.hero; hero.alt = t("alt.hero"); }
     const ed = $("#editorialImg");
     if (ed) { ed.src = images.editorial; ed.alt = t("alt.editorial"); }
     const ab = $("#aboutImg");
