@@ -165,6 +165,7 @@
       "footer.hours": "متاحون يوميًا · 10 صباحًا – 11 مساءً",
       "footer.rights": "© 2026 SILA. جميع الحقوق محفوظة.",
       "footer.made": "صُنع بحب وأناقة ✦",
+      "footer.location": "موقعنا",
 
       "explore.kicker": "تشكيلاتنا", "explore.title": "اكتشفي تشكيلات SILA",
       "explore.desc": "من الفساتين إلى الشالات والقطع الجديدة — تشكيلات مختارة بعناية لتناسب إطلالتك.",
@@ -178,6 +179,14 @@
       "explore.card.scarvesDesc": "شالات وقطع حجاب مختارة بعناية.",
       "explore.card.new": "المجموعة الجديدة",
       "explore.card.newDesc": "اكتشفي أحدث إطلالات الموسم أولاً بأول.",
+
+      "location.kicker": "متجر SILA",
+      "location.title": "موقع متجر SILA",
+      "location.desc": "زورينا في متجر SILA واكتشفي أحدث تشكيلات الأزياء والملابس النسائية.",
+      "location.infoTitle": "موقع متجر SILA",
+      "location.infoDesc": "يمكنكِ زيارة متجر SILA من خلال الموقع المحدد على خرائط Google.",
+      "location.openMaps": "فتح الموقع على خرائط Google",
+      "location.directions": "احصلي على الاتجاهات",
 
       "crumb.home": "الرئيسية",
 
@@ -388,6 +397,7 @@
       "footer.hours": "Available daily · 10 AM – 11 PM",
       "footer.rights": "© 2026 SILA. All Rights Reserved.",
       "footer.made": "Crafted with elegance ✦",
+      "footer.location": "Our Location",
 
       "explore.kicker": "Explore", "explore.title": "Explore SILA Collections",
       "explore.desc": "From dresses to scarves and brand-new pieces — carefully curated collections for every look.",
@@ -401,6 +411,14 @@
       "explore.card.scarvesDesc": "Shawls and hijab pieces chosen with care.",
       "explore.card.new": "New Collection",
       "explore.card.newDesc": "Discover the newest season's looks first.",
+
+      "location.kicker": "SILA Store",
+      "location.title": "SILA Store Location",
+      "location.desc": "Visit SILA and discover our latest women's fashion collections.",
+      "location.infoTitle": "SILA Store Location",
+      "location.infoDesc": "Visit SILA using our location on Google Maps.",
+      "location.openMaps": "Open in Google Maps",
+      "location.directions": "Get Directions",
 
       "crumb.home": "Home",
 
